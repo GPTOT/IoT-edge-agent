@@ -13,4 +13,5 @@ import (
 	"github.com/knadh/koanf/providers/confmap"
 	"github.com/knadh/koanf/providers/file"
 	"github.com/twmb/franz-go/pkg/kgo"
-	"github.c
+	"github.com/twmb/franz-go/pkg/kversion"
+	"github.com
