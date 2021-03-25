@@ -12,4 +12,5 @@ import (
 	"github.com/knadh/koanf/parsers/yaml"
 	"github.com/knadh/koanf/providers/confmap"
 	"github.com/knadh/koanf/providers/file"
-	"github.com/tw
+	"github.com/twmb/franz-go/pkg/kgo"
+	"github.c
