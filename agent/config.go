@@ -14,4 +14,5 @@ import (
 	"github.com/knadh/koanf/providers/file"
 	"github.com/twmb/franz-go/pkg/kgo"
 	"github.com/twmb/franz-go/pkg/kversion"
-	"github.com
+	"github.com/twmb/franz-go/pkg/sasl/aws"
+	"gi
