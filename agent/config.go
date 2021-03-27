@@ -15,4 +15,5 @@ import (
 	"github.com/twmb/franz-go/pkg/kgo"
 	"github.com/twmb/franz-go/pkg/kversion"
 	"github.com/twmb/franz-go/pkg/sasl/aws"
-	"github.com/twmb/franz-go/pkg
+	"github.com/twmb/franz-go/pkg/sasl/plain"
+	"github.com/twmb/
