@@ -17,4 +17,6 @@ import (
 	"github.com/twmb/franz-go/pkg/sasl/aws"
 	"github.com/twmb/franz-go/pkg/sasl/plain"
 	"github.com/twmb/franz-go/pkg/sasl/scram"
-	"github.com
+	"github.com/twmb/tlscfg"
+
+	log "github.com/sir
