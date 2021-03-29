@@ -19,4 +19,7 @@ import (
 	"github.com/twmb/franz-go/pkg/sasl/scram"
 	"github.com/twmb/tlscfg"
 
-	log "github.com/sir
+	log "github.com/sirupsen/logrus"
+)
+
+const schemaTopic = "_s
