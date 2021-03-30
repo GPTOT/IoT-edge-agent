@@ -22,4 +22,7 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-const schemaTopic = "_s
+const schemaTopic = "_schemas"
+
+var (
+	lock   = &sync.Mutex{
