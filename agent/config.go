@@ -25,4 +25,8 @@ import (
 const schemaTopic = "_schemas"
 
 var (
-	lock   = &sync.Mutex{
+	lock   = &sync.Mutex{}
+	config = koanf.New(".")
+)
+
+// Confi
