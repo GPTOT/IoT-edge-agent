@@ -29,4 +29,5 @@ var (
 	config = koanf.New(".")
 )
 
-// Confi
+// Configuration prefix
+type Prefix stri
