@@ -30,4 +30,7 @@ var (
 )
 
 // Configuration prefix
-type Prefix stri
+type Prefix string
+
+const (
+	Source      Prefix = "sou
