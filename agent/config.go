@@ -33,4 +33,5 @@ var (
 type Prefix string
 
 const (
-	Source      Prefix = "sou
+	Source      Prefix = "source"
+	Destination Prefix = "destination
