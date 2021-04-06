@@ -40,4 +40,4 @@ const (
 type Direction int8
 
 const (
-	Pu
+	Push Direction = iota // Push 
