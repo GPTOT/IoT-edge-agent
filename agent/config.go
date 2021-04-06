@@ -34,4 +34,10 @@ type Prefix string
 
 const (
 	Source      Prefix = "source"
-	Destination Prefix = "destination
+	Destination Prefix = "destination"
+)
+
+type Direction int8
+
+const (
+	Pu
