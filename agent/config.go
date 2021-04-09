@@ -41,4 +41,4 @@ type Direction int8
 
 const (
 	Push Direction = iota // Push from source topic to destination topic
-	Pull  
+	Pull                  // Pull from des
