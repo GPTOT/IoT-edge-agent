@@ -44,4 +44,4 @@ const (
 	Pull                  // Pull from destination topic to source topic
 )
 
-fu
+func (d Direction) String() string
