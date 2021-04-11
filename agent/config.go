@@ -48,4 +48,7 @@ func (d Direction) String() string {
 	switch d {
 	case Push:
 		return "push"
-	
+	case Pull:
+		return "pull"
+	default:
+		return 
