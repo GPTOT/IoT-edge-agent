@@ -44,4 +44,8 @@ const (
 	Pull                  // Pull from destination topic to source topic
 )
 
-func (d Direction) String() string
+func (d Direction) String() string {
+	switch d {
+	case Push:
+		return "push"
+	
