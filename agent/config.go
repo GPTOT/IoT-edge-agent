@@ -55,4 +55,5 @@ func (d Direction) String() string {
 	}
 }
 
-type Top
+type Topic struct {
+	sourceName      string
