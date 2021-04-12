@@ -51,4 +51,8 @@ func (d Direction) String() string {
 	case Pull:
 		return "pull"
 	default:
-		return 
+		return fmt.Sprintf("%d", int(d))
+	}
+}
+
+type Top
