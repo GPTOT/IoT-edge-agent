@@ -62,4 +62,5 @@ type Topic struct {
 }
 
 func (t Topic) String() string {
-	
+	if t.direction == Push {
+		return fmt.Sprintf("%s
