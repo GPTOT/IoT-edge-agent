@@ -58,4 +58,8 @@ func (d Direction) String() string {
 type Topic struct {
 	sourceName      string
 	destinationName string
-	direction  
+	direction       Direction
+}
+
+func (t Topic) String() string {
+	
