@@ -66,4 +66,6 @@ func (t Topic) String() string {
 		return fmt.Sprintf("%s > %s",
 			t.sourceName, t.destinationName)
 	} else {
-		return fmt.Sprintf("%s 
+		return fmt.Sprintf("%s < %s",
+			t.sourceName, t.destinationName)
+	
