@@ -68,4 +68,7 @@ func (t Topic) String() string {
 	} else {
 		return fmt.Sprintf("%s < %s",
 			t.sourceName, t.destinationName)
-	
+	}
+}
+
+// Returns the name of the top
