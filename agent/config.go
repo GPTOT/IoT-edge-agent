@@ -71,4 +71,5 @@ func (t Topic) String() string {
 	}
 }
 
-// Returns the name of the top
+// Returns the name of the topic to consume from.
+// If the topic direction i
