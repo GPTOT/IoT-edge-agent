@@ -72,4 +72,4 @@ func (t Topic) String() string {
 }
 
 // Returns the name of the topic to consume from.
-// If the topic direction i
+// If the topic direction is `Push` then consume from the sourc
