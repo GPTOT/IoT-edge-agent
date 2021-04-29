@@ -78,4 +78,8 @@ func (t Topic) consumeFrom() string {
 	if t.direction == Push {
 		return t.sourceName
 	} else {
-		return t.destinati
+		return t.destinationName
+	}
+}
+
+// Returns the name of the 
