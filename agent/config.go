@@ -76,4 +76,6 @@ func (t Topic) String() string {
 // If the topic direction is `Pull` then consume from the destination topic.
 func (t Topic) consumeFrom() string {
 	if t.direction == Push {
-		retur
+		return t.sourceName
+	} else {
+		return t.destinati
