@@ -84,4 +84,5 @@ func (t Topic) consumeFrom() string {
 
 // Returns the name of the topic to produce to.
 // If the topic direction is `Push` then produce to the destination topic.
-// If the topic direction is `Pull` then produce to the source top
+// If the topic direction is `Pull` then produce to the source topic.
+func (t Topic) produceTo(
