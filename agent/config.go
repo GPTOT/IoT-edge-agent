@@ -89,4 +89,9 @@ func (t Topic) produceTo() string {
 	if t.direction == Push {
 		return t.destinationName
 	} else {
-		return t.sou
+		return t.sourceName
+	}
+}
+
+type SASLConfig struct {
+	S
