@@ -94,4 +94,4 @@ func (t Topic) produceTo() string {
 }
 
 type SASLConfig struct {
-	S
+	SaslMethod   string `koanf:"sasl_method"`
