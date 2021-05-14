@@ -95,4 +95,5 @@ func (t Topic) produceTo() string {
 
 type SASLConfig struct {
 	SaslMethod   string `koanf:"sasl_method"`
-	SaslUsername string `koanf:
+	SaslUsername string `koanf:"sasl_username"`
+	SaslPassword 
