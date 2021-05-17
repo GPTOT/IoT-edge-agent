@@ -99,4 +99,5 @@ type SASLConfig struct {
 	SaslPassword string `koanf:"sasl_password"`
 }
 
-type TLSCon
+type TLSConfig struct {
+	Enabled        bool   
