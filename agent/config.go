@@ -101,4 +101,5 @@ type SASLConfig struct {
 
 type TLSConfig struct {
 	Enabled        bool   `koanf:"enabled"`
-	ClientKeyFile  string `koanf:
+	ClientKeyFile  string `koanf:"client_key"`
+	ClientCertFile string `ko
