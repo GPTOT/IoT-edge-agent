@@ -106,4 +106,5 @@ type TLSConfig struct {
 	CaFile         string `koanf:"ca_cert"`
 }
 
-var defaultConfig = confmap.Provide
+var defaultConfig = confmap.Provider(map[string]interface{}{
+	"id":       
