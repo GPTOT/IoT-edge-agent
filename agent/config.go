@@ -107,4 +107,5 @@ type TLSConfig struct {
 }
 
 var defaultConfig = confmap.Provider(map[string]interface{}{
-	"id":       
+	"id":                            defaultID,
+	"create_topics":
