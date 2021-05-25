@@ -109,4 +109,5 @@ type TLSConfig struct {
 var defaultConfig = confmap.Provider(map[string]interface{}{
 	"id":                            defaultID,
 	"create_topics":                 false,
-	"max_poll_rec
+	"max_poll_records":              1000,
+	"max_bac
