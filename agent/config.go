@@ -110,4 +110,4 @@ var defaultConfig = confmap.Provider(map[string]interface{}{
 	"id":                            defaultID,
 	"create_topics":                 false,
 	"max_poll_records":              1000,
-	"max_bac
+	"max_backoff_secs":              600, // ten
