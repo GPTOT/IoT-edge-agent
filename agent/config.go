@@ -111,4 +111,5 @@ var defaultConfig = confmap.Provider(map[string]interface{}{
 	"create_topics":                 false,
 	"max_poll_records":              1000,
 	"max_backoff_secs":              600, // ten minutes
-	"source.name":            
+	"source.name":                   "source",
+	"source.bootstrap_servers":      "1
