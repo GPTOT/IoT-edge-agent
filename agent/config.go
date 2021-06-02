@@ -113,4 +113,5 @@ var defaultConfig = confmap.Provider(map[string]interface{}{
 	"max_backoff_secs":              600, // ten minutes
 	"source.name":                   "source",
 	"source.bootstrap_servers":      "127.0.0.1:19092",
-	"source.consum
+	"source.consumer_group_id":      defaultID,
+	"destinat
