@@ -114,4 +114,5 @@ var defaultConfig = confmap.Provider(map[string]interface{}{
 	"source.name":                   "source",
 	"source.bootstrap_servers":      "127.0.0.1:19092",
 	"source.consumer_group_id":      defaultID,
-	"destination.name":              "destin
+	"destination.name":              "destination",
+	"destination.bootstrap_servers"
