@@ -117,4 +117,6 @@ var defaultConfig = confmap.Provider(map[string]interface{}{
 	"destination.name":              "destination",
 	"destination.bootstrap_servers": "127.0.0.1:29092",
 	"destination.consumer_group_id": defaultID,
-}, "."
+}, ".")
+
+// Returns the hostname re
