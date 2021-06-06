@@ -119,4 +119,4 @@ var defaultConfig = confmap.Provider(map[string]interface{}{
 	"destination.consumer_group_id": defaultID,
 }, ".")
 
-// Returns the hostname re
+// Returns the hostname reported by the kernel to
