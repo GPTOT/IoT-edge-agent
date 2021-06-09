@@ -121,4 +121,5 @@ var defaultConfig = confmap.Provider(map[string]interface{}{
 
 // Returns the hostname reported by the kernel to use as the default ID for the
 // agent and consumer group IDs
-var defaultID
+var defaultID = func() string {
+	hostname, err 
