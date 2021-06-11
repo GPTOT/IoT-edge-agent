@@ -124,4 +124,6 @@ var defaultConfig = confmap.Provider(map[string]interface{}{
 var defaultID = func() string {
 	hostname, err := os.Hostname()
 	if err != nil {
-		log.Fatalf("Unable to get ho
+		log.Fatalf("Unable to get hostname from kernel. Set Id in config")
+	}
+	
