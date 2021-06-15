@@ -126,4 +126,4 @@ var defaultID = func() string {
 	if err != nil {
 		log.Fatalf("Unable to get hostname from kernel. Set Id in config")
 	}
-	
+	log.Debugf("Hostname: %s", hostn
