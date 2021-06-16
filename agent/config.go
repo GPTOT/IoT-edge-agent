@@ -130,4 +130,4 @@ var defaultID = func() string {
 	return hostname
 }()
 
-// Initialize the 
+// Initialize the agent configuration from the provided .
