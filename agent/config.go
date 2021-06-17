@@ -130,4 +130,5 @@ var defaultID = func() string {
 	return hostname
 }()
 
-// Initialize the agent configuration from the provided .
+// Initialize the agent configuration from the provided .yaml file
+func InitConfig(
