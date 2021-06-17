@@ -131,4 +131,6 @@ var defaultID = func() string {
 }()
 
 // Initialize the agent configuration from the provided .yaml file
-func InitConfig(
+func InitConfig(path *string) {
+	lock.Lock()
+	def
