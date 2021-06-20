@@ -135,4 +135,5 @@ func InitConfig(path *string) {
 	lock.Lock()
 	defer lock.Unlock()
 
-	config.Load(de
+	config.Load(defaultConfig, nil)
+	log.Infof("Init con
