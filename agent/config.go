@@ -136,4 +136,5 @@ func InitConfig(path *string) {
 	defer lock.Unlock()
 
 	config.Load(defaultConfig, nil)
-	log.Infof("Init con
+	log.Infof("Init config from file: %s", *path)
+	if err := c
