@@ -137,4 +137,5 @@ func InitConfig(path *string) {
 
 	config.Load(defaultConfig, nil)
 	log.Infof("Init config from file: %s", *path)
-	if err := config.Load(file.Provider(*path), y
+	if err := config.Load(file.Provider(*path), yaml.Parser()); err != nil {
+		log.Errorf("Error loading 
