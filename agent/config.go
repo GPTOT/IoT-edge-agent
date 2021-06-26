@@ -140,4 +140,8 @@ func InitConfig(path *string) {
 	if err := config.Load(file.Provider(*path), yaml.Parser()); err != nil {
 		log.Errorf("Error loading config: %v", err)
 	}
-	validate
+	validate()
+	log.Debugf(config.Sprint())
+}
+
+// Par
