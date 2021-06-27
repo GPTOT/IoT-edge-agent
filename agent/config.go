@@ -145,4 +145,4 @@ func InitConfig(path *string) {
 }
 
 // Parse topic configuration
-func parseTopics(top
+func parseTopics(topics []string, direction Directi
