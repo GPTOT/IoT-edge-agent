@@ -144,4 +144,5 @@ func InitConfig(path *string) {
 	log.Debugf(config.Sprint())
 }
 
-// Par
+// Parse topic configuration
+func parseTopics(top
