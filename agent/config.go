@@ -145,4 +145,6 @@ func InitConfig(path *string) {
 }
 
 // Parse topic configuration
-func parseTopics(topics []string, direction Directi
+func parseTopics(topics []string, direction Direction) []Topic {
+	var all []Topic
+	for _
