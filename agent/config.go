@@ -148,4 +148,6 @@ func InitConfig(path *string) {
 func parseTopics(topics []string, direction Direction) []Topic {
 	var all []Topic
 	for _, t := range topics {
-		s := strings.Split(t
+		s := strings.Split(t, ":")
+		if len(s) == 1 {
+			all
