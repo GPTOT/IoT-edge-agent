@@ -150,4 +150,5 @@ func parseTopics(topics []string, direction Direction) []Topic {
 	for _, t := range topics {
 		s := strings.Split(t, ":")
 		if len(s) == 1 {
-			all
+			all = append(all, Topic{
+				sourceName:      st
