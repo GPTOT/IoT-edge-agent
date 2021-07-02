@@ -153,4 +153,6 @@ func parseTopics(topics []string, direction Direction) []Topic {
 			all = append(all, Topic{
 				sourceName:      strings.TrimSpace(s[0]),
 				destinationName: strings.TrimSpace(s[0]),
-				direction: 
+				direction:       direction,
+			})
+		} else if len(s) =
