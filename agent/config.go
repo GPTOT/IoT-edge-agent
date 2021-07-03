@@ -156,4 +156,5 @@ func parseTopics(topics []string, direction Direction) []Topic {
 				direction:       direction,
 			})
 		} else if len(s) == 2 {
-			// Push from source topic t
+			// Push from source topic to destination topic
+			var src = st
