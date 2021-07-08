@@ -160,4 +160,5 @@ func parseTopics(topics []string, direction Direction) []Topic {
 			var src = strings.TrimSpace(s[0])
 			var dst = strings.TrimSpace(s[1])
 			if direction == Pull {
-				// P
+				// Pull from destination topic to source topic
+			
