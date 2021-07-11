@@ -164,4 +164,5 @@ func parseTopics(topics []string, direction Direction) []Topic {
 				src = strings.TrimSpace(s[1])
 				dst = strings.TrimSpace(s[0])
 			}
-		
+			all = append(all, Topic{
+				sou
