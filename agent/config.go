@@ -167,4 +167,5 @@ func parseTopics(topics []string, direction Direction) []Topic {
 			all = append(all, Topic{
 				sourceName:      src,
 				destinationName: dst,
-				dir
+				direction:       direction,
+			})
