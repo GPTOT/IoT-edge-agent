@@ -170,4 +170,7 @@ func parseTopics(topics []string, direction Direction) []Topic {
 				direction:       direction,
 			})
 		} else {
-			log.Fatalf("Incorrect topic
+			log.Fatalf("Incorrect topic configuration: %s", t)
+		}
+	}
+	ret
