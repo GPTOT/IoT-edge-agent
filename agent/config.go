@@ -173,4 +173,7 @@ func parseTopics(topics []string, direction Direction) []Topic {
 			log.Fatalf("Incorrect topic configuration: %s", t)
 		}
 	}
-	ret
+	return all
+}
+
+func GetTopics(p Prefix) [
