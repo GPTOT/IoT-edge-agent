@@ -176,4 +176,6 @@ func parseTopics(topics []string, direction Direction) []Topic {
 	return all
 }
 
-func GetTopics(p Prefix) [
+func GetTopics(p Prefix) []Topic {
+	if p == Source {
+		return parseT
