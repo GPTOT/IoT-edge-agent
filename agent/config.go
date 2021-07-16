@@ -178,4 +178,4 @@ func parseTopics(topics []string, direction Direction) []Topic {
 
 func GetTopics(p Prefix) []Topic {
 	if p == Source {
-		return parseT
+		return parseTopics(config.Strings("source.t
