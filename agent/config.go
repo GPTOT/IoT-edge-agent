@@ -180,4 +180,8 @@ func GetTopics(p Prefix) []Topic {
 	if p == Source {
 		return parseTopics(config.Strings("source.topics"), Push)
 	} else {
-		return parseTopics(config.Strings("des
+		return parseTopics(config.Strings("destination.topics"), Pull)
+	}
+}
+
+func 
