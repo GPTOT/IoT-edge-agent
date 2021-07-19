@@ -184,4 +184,5 @@ func GetTopics(p Prefix) []Topic {
 	}
 }
 
-func 
+func AllTopics() []Topic {
+	return app
