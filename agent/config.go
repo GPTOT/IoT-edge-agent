@@ -185,4 +185,7 @@ func GetTopics(p Prefix) []Topic {
 }
 
 func AllTopics() []Topic {
-	return append(GetTopics(Source), GetTopics(Dest
+	return append(GetTopics(Source), GetTopics(Destination)...)
+}
+
+// Check f
