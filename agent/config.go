@@ -185,4 +185,4 @@ func GetTopics(p Prefix) []Topic {
 }
 
 func AllTopics() []Topic {
-	return app
+	return append(GetTopics(Source), GetTopics(Dest
