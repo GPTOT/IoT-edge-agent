@@ -188,4 +188,5 @@ func AllTopics() []Topic {
 	return append(GetTopics(Source), GetTopics(Destination)...)
 }
 
-// Check f
+// Check for circular dependency
+// t1
