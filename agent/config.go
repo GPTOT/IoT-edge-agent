@@ -189,4 +189,5 @@ func AllTopics() []Topic {
 }
 
 // Check for circular dependency
-// t1
+// t1.src > t1.dst
+// t2.src <
