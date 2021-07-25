@@ -193,4 +193,5 @@ func AllTopics() []Topic {
 // t2.src < t2.dst
 func circular(t1, t2 *Topic) bool {
 	if t1.direction != t2.direction {
-		if t1.sourceName == t2
+		if t1.sourceName == t2.sourceName {
+			if t1.destinationName == t
