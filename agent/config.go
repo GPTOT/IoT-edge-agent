@@ -203,4 +203,6 @@ func circular(t1, t2 *Topic) bool {
 }
 
 // Validate the config
-func valid
+func validate() {
+	config.MustString("id")
+	config.MustStri
