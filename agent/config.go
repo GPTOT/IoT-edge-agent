@@ -202,4 +202,5 @@ func circular(t1, t2 *Topic) bool {
 	return false
 }
 
-/
+// Validate the config
+func valid
