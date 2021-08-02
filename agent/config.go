@@ -205,4 +205,4 @@ func circular(t1, t2 *Topic) bool {
 // Validate the config
 func validate() {
 	config.MustString("id")
-	config.MustStri
+	config.MustString("source.bootstrap_servers
