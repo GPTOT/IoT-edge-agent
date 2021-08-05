@@ -209,4 +209,5 @@ func validate() {
 	config.MustString("destination.bootstrap_servers")
 
 	topics := AllTopics()
-	
+	if len(topics) == 0 {
+		log.Fatal("No push 
