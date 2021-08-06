@@ -210,4 +210,6 @@ func validate() {
 
 	topics := AllTopics()
 	if len(topics) == 0 {
-		log.Fatal("No push 
+		log.Fatal("No push or pull topics configured")
+	}
+	for i, t1
