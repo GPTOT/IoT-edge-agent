@@ -213,4 +213,5 @@ func validate() {
 		log.Fatal("No push or pull topics configured")
 	}
 	for i, t1 := range topics {
-		for k, t2 
+		for k, t2 := range topics {
+			if (i != k) && (
