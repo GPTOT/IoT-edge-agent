@@ -214,4 +214,5 @@ func validate() {
 	}
 	for i, t1 := range topics {
 		for k, t2 := range topics {
-			if (i != k) && (
+			if (i != k) && (t1 == t2) {
+				log.Fatalf("Duplicate 
