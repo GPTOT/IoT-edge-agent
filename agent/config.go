@@ -216,4 +216,6 @@ func validate() {
 		for k, t2 := range topics {
 			if (i != k) && (t1 == t2) {
 				log.Fatalf("Duplicate topic configured: %s", t1.String())
-	
+			}
+			if circular(&t1, &t2) {
+				log
