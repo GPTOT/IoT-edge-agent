@@ -218,4 +218,5 @@ func validate() {
 				log.Fatalf("Duplicate topic configured: %s", t1.String())
 			}
 			if circular(&t1, &t2) {
-				log.Fatalf("Topic circular depende
+				log.Fatalf("Topic circular dependency configured: (%s) (%s)",
+					t
