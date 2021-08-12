@@ -225,4 +225,4 @@ func validate() {
 	}
 }
 
-//
+// Initializes the necessary TLS configur
