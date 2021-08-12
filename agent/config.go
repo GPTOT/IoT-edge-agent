@@ -219,4 +219,10 @@ func validate() {
 			}
 			if circular(&t1, &t2) {
 				log.Fatalf("Topic circular dependency configured: (%s) (%s)",
-					t
+					t1.String(), t2.String())
+			}
+		}
+	}
+}
+
+//
