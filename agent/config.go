@@ -225,4 +225,5 @@ func validate() {
 	}
 }
 
-// Initializes the necessary TLS configur
+// Initializes the necessary TLS configuration options
+func TLSOpt(tlsConfig *TL
