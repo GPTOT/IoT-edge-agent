@@ -226,4 +226,5 @@ func validate() {
 }
 
 // Initializes the necessary TLS configuration options
-func TLSOpt(tlsConfig *TL
+func TLSOpt(tlsConfig *TLSConfig, opts []kgo.Opt) []kgo.Opt {
+	if tlsC
