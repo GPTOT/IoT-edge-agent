@@ -227,4 +227,5 @@ func validate() {
 
 // Initializes the necessary TLS configuration options
 func TLSOpt(tlsConfig *TLSConfig, opts []kgo.Opt) []kgo.Opt {
-	if tlsC
+	if tlsConfig.Enabled {
+		if tlsConfig.CaF
