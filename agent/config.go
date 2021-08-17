@@ -229,4 +229,5 @@ func validate() {
 func TLSOpt(tlsConfig *TLSConfig, opts []kgo.Opt) []kgo.Opt {
 	if tlsConfig.Enabled {
 		if tlsConfig.CaFile != "" ||
-			tlsConfig.ClientCertFi
+			tlsConfig.ClientCertFile != "" ||
+			tlsConfig.Cli
