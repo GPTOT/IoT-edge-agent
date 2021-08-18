@@ -230,4 +230,5 @@ func TLSOpt(tlsConfig *TLSConfig, opts []kgo.Opt) []kgo.Opt {
 	if tlsConfig.Enabled {
 		if tlsConfig.CaFile != "" ||
 			tlsConfig.ClientCertFile != "" ||
-			tlsConfig.Cli
+			tlsConfig.ClientKeyFile != "" {
+			tc, err := tlscfg.New(
