@@ -233,4 +233,4 @@ func TLSOpt(tlsConfig *TLSConfig, opts []kgo.Opt) []kgo.Opt {
 			tlsConfig.ClientKeyFile != "" {
 			tc, err := tlscfg.New(
 				tlscfg.MaybeWithDiskCA(
-				
+					tlsConfig.CaFile, tlscfg.ForClie
