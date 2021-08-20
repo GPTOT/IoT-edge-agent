@@ -237,3 +237,5 @@ func TLSOpt(tlsConfig *TLSConfig, opts []kgo.Opt) []kgo.Opt {
 				tlscfg.MaybeWithDiskKeyPair(
 					tlsConfig.ClientCertFile, tlsConfig.ClientKeyFile),
 			)
+			if err != nil {
+				log
