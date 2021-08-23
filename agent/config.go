@@ -238,4 +238,6 @@ func TLSOpt(tlsConfig *TLSConfig, opts []kgo.Opt) []kgo.Opt {
 					tlsConfig.ClientCertFile, tlsConfig.ClientKeyFile),
 			)
 			if err != nil {
-				log.Fatalf("Unable to create TLS config: 
+				log.Fatalf("Unable to create TLS config: %v", err)
+			}
+			opts = append(opts, kg
