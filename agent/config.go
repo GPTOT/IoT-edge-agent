@@ -240,4 +240,6 @@ func TLSOpt(tlsConfig *TLSConfig, opts []kgo.Opt) []kgo.Opt {
 			if err != nil {
 				log.Fatalf("Unable to create TLS config: %v", err)
 			}
-			opts = append(opts, kg
+			opts = append(opts, kgo.DialTLSConfig(tc))
+		} else {
+			opts = ap
