@@ -242,4 +242,4 @@ func TLSOpt(tlsConfig *TLSConfig, opts []kgo.Opt) []kgo.Opt {
 			}
 			opts = append(opts, kgo.DialTLSConfig(tc))
 		} else {
-			opts = ap
+			opts = append(opts, kgo.DialTLSConfig(ne
