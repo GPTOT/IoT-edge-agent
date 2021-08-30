@@ -249,4 +249,4 @@ func TLSOpt(tlsConfig *TLSConfig, opts []kgo.Opt) []kgo.Opt {
 }
 
 // Initializes the necessary SASL configuration options
-func
+func SASLOpt(config *SASLConfig, opts []
