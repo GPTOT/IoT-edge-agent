@@ -251,4 +251,7 @@ func TLSOpt(tlsConfig *TLSConfig, opts []kgo.Opt) []kgo.Opt {
 // Initializes the necessary SASL configuration options
 func SASLOpt(config *SASLConfig, opts []kgo.Opt) []kgo.Opt {
 	if config.SaslMethod != "" ||
-		config.SaslUsername != 
+		config.SaslUsername != "" ||
+		config.SaslPassword != "" {
+
+		if co
