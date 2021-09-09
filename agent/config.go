@@ -255,4 +255,5 @@ func SASLOpt(config *SASLConfig, opts []kgo.Opt) []kgo.Opt {
 		config.SaslPassword != "" {
 
 		if config.SaslMethod == "" ||
-			confi
+			config.SaslUsername == "" ||
+			config.SaslPass
