@@ -260,4 +260,5 @@ func SASLOpt(config *SASLConfig, opts []kgo.Opt) []kgo.Opt {
 			log.Fatalln("All of SaslMethod, SaslUsername, SaslPassword " +
 				"must be specified if any are")
 		}
-		method := strings.ToLower(config.SaslMe
+		method := strings.ToLower(config.SaslMethod)
+		method = strings.ReplaceAll(method, "-
