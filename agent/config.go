@@ -261,4 +261,5 @@ func SASLOpt(config *SASLConfig, opts []kgo.Opt) []kgo.Opt {
 				"must be specified if any are")
 		}
 		method := strings.ToLower(config.SaslMethod)
-		method = strings.ReplaceAll(method, "-
+		method = strings.ReplaceAll(method, "-", "")
+		method = strings.ReplaceAll(m
