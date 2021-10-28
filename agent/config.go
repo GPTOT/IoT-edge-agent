@@ -262,4 +262,5 @@ func SASLOpt(config *SASLConfig, opts []kgo.Opt) []kgo.Opt {
 		}
 		method := strings.ToLower(config.SaslMethod)
 		method = strings.ReplaceAll(method, "-", "")
-		method = strings.ReplaceAll(m
+		method = strings.ReplaceAll(method, "_", "")
+		switch method {
