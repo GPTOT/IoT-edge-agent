@@ -264,3 +264,5 @@ func SASLOpt(config *SASLConfig, opts []kgo.Opt) []kgo.Opt {
 		method = strings.ReplaceAll(method, "-", "")
 		method = strings.ReplaceAll(method, "_", "")
 		switch method {
+		case "plain":
+			opts = append(o
