@@ -266,4 +266,5 @@ func SASLOpt(config *SASLConfig, opts []kgo.Opt) []kgo.Opt {
 		switch method {
 		case "plain":
 			opts = append(opts, kgo.SASL(plain.Auth{
-				Use
+				User: config.SaslUsername,
+				Pas
