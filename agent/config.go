@@ -277,4 +277,5 @@ func SASLOpt(config *SASLConfig, opts []kgo.Opt) []kgo.Opt {
 		case "scramsha512":
 			opts = append(opts, kgo.SASL(scram.Auth{
 				User: config.SaslUsername,
-				Pass: config.Sasl
+				Pass: config.SaslPassword,
+			}.AsSha512Mechanism()
