@@ -280,4 +280,5 @@ func SASLOpt(config *SASLConfig, opts []kgo.Opt) []kgo.Opt {
 				Pass: config.SaslPassword,
 			}.AsSha512Mechanism()))
 		case "awsmskiam":
-			opts 
+			opts = append(opts, kgo.SASL(aws.Auth{
+				AccessK
