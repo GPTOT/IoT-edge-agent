@@ -281,4 +281,5 @@ func SASLOpt(config *SASLConfig, opts []kgo.Opt) []kgo.Opt {
 			}.AsSha512Mechanism()))
 		case "awsmskiam":
 			opts = append(opts, kgo.SASL(aws.Auth{
-				AccessK
+				AccessKey: config.SaslUsername,
+				SecretKey: config.S
