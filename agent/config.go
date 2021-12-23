@@ -282,4 +282,5 @@ func SASLOpt(config *SASLConfig, opts []kgo.Opt) []kgo.Opt {
 		case "awsmskiam":
 			opts = append(opts, kgo.SASL(aws.Auth{
 				AccessKey: config.SaslUsername,
-				SecretKey: config.S
+				SecretKey: config.SaslPassword,
+			}.AsManagedStreamingIAMMech
