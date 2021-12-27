@@ -285,4 +285,7 @@ func SASLOpt(config *SASLConfig, opts []kgo.Opt) []kgo.Opt {
 				SecretKey: config.SaslPassword,
 			}.AsManagedStreamingIAMMechanism()))
 		default:
-			log.Fatalf("Unrecognized sasl method: 
+			log.Fatalf("Unrecognized sasl method: %s", method)
+		}
+	}
+	return opts
