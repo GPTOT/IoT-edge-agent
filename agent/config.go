@@ -283,4 +283,6 @@ func SASLOpt(config *SASLConfig, opts []kgo.Opt) []kgo.Opt {
 			opts = append(opts, kgo.SASL(aws.Auth{
 				AccessKey: config.SaslUsername,
 				SecretKey: config.SaslPassword,
-			}.AsManagedStreamingIAMMech
+			}.AsManagedStreamingIAMMechanism()))
+		default:
+			log.F
