@@ -289,3 +289,6 @@ func SASLOpt(config *SASLConfig, opts []kgo.Opt) []kgo.Opt {
 		}
 	}
 	return opts
+}
+
+// Set the maximum Kafka protoco
