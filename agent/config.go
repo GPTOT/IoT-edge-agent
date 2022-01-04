@@ -296,4 +296,5 @@ func MaxVersionOpt(version string, opts []kgo.Opt) []kgo.Opt {
 	ver := strings.ToLower(version)
 	ver = strings.ReplaceAll(ver, "v", "")
 	ver = strings.ReplaceAll(ver, ".", "")
-	ver = strings.Replac
+	ver = strings.ReplaceAll(ver, "_", "")
+	verNum
