@@ -295,4 +295,5 @@ func SASLOpt(config *SASLConfig, opts []kgo.Opt) []kgo.Opt {
 func MaxVersionOpt(version string, opts []kgo.Opt) []kgo.Opt {
 	ver := strings.ToLower(version)
 	ver = strings.ReplaceAll(ver, "v", "")
-	ver = strings.ReplaceA
+	ver = strings.ReplaceAll(ver, ".", "")
+	ver = strings.Replac
