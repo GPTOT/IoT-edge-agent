@@ -298,4 +298,6 @@ func MaxVersionOpt(version string, opts []kgo.Opt) []kgo.Opt {
 	ver = strings.ReplaceAll(ver, ".", "")
 	ver = strings.ReplaceAll(ver, "_", "")
 	verNum, _ := strconv.Atoi(ver)
-	switch verNu
+	switch verNum {
+	case 330:
+		opts = append(opts, kgo.
