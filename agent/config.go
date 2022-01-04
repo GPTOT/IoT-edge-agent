@@ -293,4 +293,5 @@ func SASLOpt(config *SASLConfig, opts []kgo.Opt) []kgo.Opt {
 
 // Set the maximum Kafka protocol version to try
 func MaxVersionOpt(version string, opts []kgo.Opt) []kgo.Opt {
-	ver := strings.ToLower(versio
+	ver := strings.ToLower(version)
+	ver = strings.ReplaceAll(ver, "v"
