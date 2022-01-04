@@ -300,4 +300,4 @@ func MaxVersionOpt(version string, opts []kgo.Opt) []kgo.Opt {
 	verNum, _ := strconv.Atoi(ver)
 	switch verNum {
 	case 330:
-		opts = append(opts, kgo.
+		opts = append(opts, kgo.MaxVersions(kversion.V3_3_0())
