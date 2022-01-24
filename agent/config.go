@@ -314,4 +314,4 @@ func MaxVersionOpt(version string, opts []kgo.Opt) []kgo.Opt {
 	case 260:
 		opts = append(opts, kgo.MaxVersions(kversion.V2_6_0()))
 	default:
-		o
+		opts = append(opts, kgo.MaxVers
