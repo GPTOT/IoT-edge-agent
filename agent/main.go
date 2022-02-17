@@ -56,3 +56,41 @@ func shutdown() {
 // by the agent from the destination cluster to the source cluster.
 func initClient(rp *Redpanda, mutex *sync.Once, prefix Prefix) {
 	mutex.Do(func() {
+		var err error
+		name := config.String(
+			fmt.Sprintf("%s.name", prefix))
+		servers := config.String(
+			fmt.Sprintf("%s.bootstrap_servers", prefix))
+
+		topics := GetTopics(prefix)
+		var consumeTopics []string
+		for _, t := range topics {
+			consumeTopics = append(consumeTopics, t.consumeFrom())
+			log.Infof("Added %s topic: %s", t.direction.String(), t.String())
+		}
+
+		group := config.String(
+			fmt.Sprintf("%s.consumer_group_id", prefix))
+
+		opts := []kgo.Opt{}
+		opts = append(opts,
+			kgo.SeedBrokers(strings.Split(servers, ",")...),
+			// https://github.com/redpanda-data/redpanda/issues/8546
+			kgo.ProducerBatchCompression(kgo.NoCompression()),
+		)
+		if len(topics) > 0 {
+			opts = append(opts,
+				kgo.ConsumeTopics(consumeTopics...),
+				kgo.ConsumerGroup(group),
+				kgo.ConsumeResetOffset(kgo.NewOffset().AtStart()),
+				kgo.SessionTimeout(60000*time.Millisecond),
+				kgo.DisableAutoCommit(),
+				kgo.BlockRebalanceOnPoll())
+		}
+		maxVersionPath := fmt.Sprintf("%s.max_version", prefix)
+		if config.Exists(maxVersionPath) {
+			opts = MaxVersionOpt(config.String(maxVersionPath), opts)
+		}
+		tlsPath := fmt.Sprintf("%s.tls", prefix)
+		if config.Exists(tlsPath) {
+			tlsConfig := TLSConfig{}
