@@ -136,3 +136,28 @@ func contains(s []string, e string) bool {
 			return true
 		}
 	}
+	return false
+}
+
+// Check the topics exist on the given cluster. If the topics to not exist then
+// this function will attempt to create them if configured to do so.
+func checkTopics(cluster *Redpanda) {
+	ctx := context.Background()
+	var createTopics []string
+	for _, topic := range AllTopics() {
+		if topic.sourceName == schemaTopic ||
+			topic.destinationName == schemaTopic {
+			// Skip _schemas internal topic
+			log.Debugf("Skip creating '%s' topic", schemaTopic)
+			continue
+		}
+		if cluster.prefix == Source {
+			if !contains(createTopics, topic.sourceName) {
+				createTopics = append(createTopics, topic.sourceName)
+			}
+		} else if cluster.prefix == Destination {
+			if !contains(createTopics, topic.destinationName) {
+				createTopics = append(createTopics, topic.destinationName)
+			}
+		}
+	}
