@@ -94,3 +94,45 @@ func initClient(rp *Redpanda, mutex *sync.Once, prefix Prefix) {
 		tlsPath := fmt.Sprintf("%s.tls", prefix)
 		if config.Exists(tlsPath) {
 			tlsConfig := TLSConfig{}
+			config.Unmarshal(tlsPath, &tlsConfig)
+			opts = TLSOpt(&tlsConfig, opts)
+		}
+		saslPath := fmt.Sprintf("%s.sasl", prefix)
+		if config.Exists(saslPath) {
+			saslConfig := SASLConfig{}
+			config.Unmarshal(saslPath, &saslConfig)
+			opts = SASLOpt(&saslConfig, opts)
+		}
+
+		rp.name = name
+		rp.prefix = prefix
+		rp.topics = topics
+		rp.client, err = kgo.NewClient(opts...)
+		if err != nil {
+			log.Fatalf("Unable to load client: %v", err)
+		}
+		// Check connectivity to cluster
+		if err = rp.client.Ping(context.Background()); err != nil {
+			log.Errorf("Unable to ping %s cluster: %s",
+				prefix, err.Error())
+		}
+
+		rp.adm = kadm.NewClient(rp.client)
+		brokers, err := rp.adm.ListBrokers(context.Background())
+		if err != nil {
+			log.Errorf("Unable to list brokers: %v", err)
+		}
+		log.Infof("Created %s client", name)
+		for _, broker := range brokers {
+			brokerJson, _ := json.Marshal(broker)
+			log.Debugf("%s broker: %s", prefix, string(brokerJson))
+		}
+	})
+}
+
+func contains(s []string, e string) bool {
+	for _, a := range s {
+		if a == e {
+			return true
+		}
+	}
