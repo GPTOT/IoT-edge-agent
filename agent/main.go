@@ -161,3 +161,49 @@ func checkTopics(cluster *Redpanda) {
 			}
 		}
 	}
+
+	topicDetails, err := cluster.adm.ListTopics(ctx, createTopics...)
+	if err != nil {
+		log.Errorf("Unable to list topics on %s: %v", cluster.name, err)
+		return
+	}
+
+	for _, topic := range createTopics {
+		if !topicDetails.Has(topic) {
+			if config.Exists("create_topics") {
+				// Use the clusters default partition and replication settings
+				resp, _ := cluster.adm.CreateTopics(
+					ctx, -1, -1, nil, topic)
+				for _, ctr := range resp {
+					if ctr.Err != nil {
+						log.Warnf("Unable to create topic '%s' on %s: %s",
+							ctr.Topic, cluster.name, ctr.Err)
+					} else {
+						log.Infof("Created topic '%s' on %s",
+							ctr.Topic, cluster.name)
+					}
+				}
+			} else {
+				log.Fatalf("Topic '%s' does not exist on %s",
+					topic, cluster.name)
+			}
+		} else {
+			log.Infof("Topic '%s' already exists on %s",
+				topic, cluster.name)
+		}
+	}
+}
+
+// Pauses fetching new records when a fetch error is received.
+// The backoff period is determined by the number of sequential
+// fetch errors received, and it increases exponentially up to
+// a maximum number of seconds set by 'maxBackoffSec'.
+//
+// For example:
+//
+//	2 fetch errors = 2 ^ 2 = 4 second backoff
+//	3 fetch errors = 3 ^ 2 = 9 second backoff
+//	4 fetch errors = 4 ^ 2 = 16 second backoff
+func backoff(exp *int) {
+	*exp += 1
+	backoff := math.Pow(float64(*exp), 2)
