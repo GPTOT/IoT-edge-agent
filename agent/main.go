@@ -207,3 +207,38 @@ func checkTopics(cluster *Redpanda) {
 func backoff(exp *int) {
 	*exp += 1
 	backoff := math.Pow(float64(*exp), 2)
+	if backoff >= config.Float64("max_backoff_secs") {
+		backoff = config.Float64("max_backoff_secs")
+	}
+	log.Warnf("Backing off for %d seconds", int(backoff))
+	time.Sleep(time.Duration(backoff) * time.Second)
+}
+
+// Log with additional "id" field to identify whether the log message is coming
+// from the push routine, or the pull routine.
+func logWithId(lvl string, id string, msg string) {
+	level, _ := log.ParseLevel(lvl)
+	switch level {
+	case log.ErrorLevel:
+		log.WithField("id", id).Errorln(msg)
+	case log.WarnLevel:
+		log.WithField("id", id).Warnln(msg)
+	case log.InfoLevel:
+		log.WithField("id", id).Infoln(msg)
+	case log.DebugLevel:
+		log.WithField("id", id).Debugln(msg)
+	case log.TraceLevel:
+		log.WithField("id", id).Traceln(msg)
+	}
+}
+
+// Continuously fetch batches of records from the `src` cluster and forward
+// them to the `dst` cluster. Consumer offsets are only committed when the
+// `dst` cluster acknowledges the records.
+func forwardRecords(src *Redpanda, dst *Redpanda, ctx context.Context) {
+	defer wg.Done()
+	var errCount int = 0
+	var fetches kgo.Fetches
+	var sent bool
+	var committed bool
+	logWithId("info", src.name,
