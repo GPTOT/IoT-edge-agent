@@ -242,3 +242,32 @@ func forwardRecords(src *Redpanda, dst *Redpanda, ctx context.Context) {
 	var sent bool
 	var committed bool
 	logWithId("info", src.name,
+		fmt.Sprintf("Forwarding records from '%s' to '%s'", src.name, dst.name))
+
+	topicMap := make(map[string]string)
+	for _, t := range AllTopics() {
+		topicMap[t.consumeFrom()] = t.produceTo()
+	}
+
+	for {
+		if (sent && committed) || len(fetches.Records()) == 0 {
+			// Only poll when the previous fetches were successfully
+			// sent and committed
+			logWithId("debug", src.name, "Polling for records...")
+			fetches = src.client.PollRecords(
+				ctx, config.Int("max_poll_records"))
+			if errs := fetches.Errors(); len(errs) > 0 {
+				for _, e := range errs {
+					if e.Err == context.Canceled {
+						logWithId("info", src.name,
+							fmt.Sprintf("Received interrupt: %s", e.Err))
+						return
+					}
+					logWithId("error", src.name,
+						fmt.Sprintf("Fetch error: %s", e.Err))
+				}
+				backoff(&errCount)
+			}
+			if len(fetches.Records()) > 0 {
+				logWithId("debug", src.name,
+					fmt.Sprintf("Consumed %d records", len(fetches.Records())))
