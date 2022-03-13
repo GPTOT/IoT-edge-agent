@@ -316,3 +316,36 @@ func forwardRecords(src *Redpanda, dst *Redpanda, ctx context.Context) {
 					fmt.Sprintf("Sent %d records to %s",
 						len(fetches.Records()), dst.name))
 			}
+		}
+
+		if sent && !committed {
+			// Records have been sent successfully, so commit offsets
+			if log.GetLevel() == log.TraceLevel {
+				offsets := src.client.UncommittedOffsets()
+				offsetsJson, _ := json.Marshal(offsets)
+				logWithId("trace", src.name,
+					fmt.Sprintf("Committing offsets: %s", string(offsetsJson)))
+			}
+			err := src.client.CommitUncommittedOffsets(ctx)
+			if err != nil {
+				if err == context.Canceled {
+					logWithId("info", src.name,
+						fmt.Sprintf("Received interrupt: %s", err.Error()))
+					return
+				}
+				logWithId("error", src.name,
+					fmt.Sprintf("Unable to commit offsets: %s", err.Error()))
+				backoff(&errCount)
+			} else {
+				errCount = 0 // Reset error counter
+				committed = true
+				logWithId("debug", src.name, "Offsets committed")
+			}
+		}
+
+		src.client.AllowRebalance()
+	}
+}
+
+func main() {
+	configFile := flag.String(
