@@ -271,3 +271,48 @@ func forwardRecords(src *Redpanda, dst *Redpanda, ctx context.Context) {
 			if len(fetches.Records()) > 0 {
 				logWithId("debug", src.name,
 					fmt.Sprintf("Consumed %d records", len(fetches.Records())))
+				iter := fetches.RecordIter()
+				for !iter.Done() {
+					record := iter.Next()
+					// Change the topic name if necessary
+					changeName := topicMap[record.Topic]
+					if changeName != "" {
+						logWithId("trace", src.name,
+							fmt.Sprintf("Mapping topic name '%s' to '%s'",
+								record.Topic, changeName))
+						record.Topic = changeName
+					}
+					// If the record key is empty, then set it to the agent id to
+					// route the records to the same topic partition.
+					if record.Key == nil {
+						record.Key = []byte(config.String("id"))
+					}
+				}
+				sent = false
+				committed = false
+			} else {
+				// No records, skip iteration and poll for more records
+				continue
+			}
+		}
+
+		if !sent && !committed {
+			// Send records to destination
+			err := dst.client.ProduceSync(
+				ctx, fetches.Records()...).FirstErr()
+			if err != nil {
+				if err == context.Canceled {
+					logWithId("info", src.name,
+						fmt.Sprintf("Received interrupt: %s", err.Error()))
+					return
+				}
+				logWithId("error", src.name,
+					fmt.Sprintf("Unable to send %d record(s) to %s: %s",
+						len(fetches.Records()), dst.name, err.Error()))
+				backoff(&errCount)
+			} else {
+				sent = true
+				logWithId("debug", src.name,
+					fmt.Sprintf("Sent %d records to %s",
+						len(fetches.Records()), dst.name))
+			}
