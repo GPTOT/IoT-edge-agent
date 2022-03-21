@@ -380,3 +380,4 @@ func main() {
 	stop()
 	shutdown()
 	log.Infoln("Agent stopped")
+}
