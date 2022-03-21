@@ -349,3 +349,34 @@ func forwardRecords(src *Redpanda, dst *Redpanda, ctx context.Context) {
 
 func main() {
 	configFile := flag.String(
+		"config", "agent.yaml", "path to agent config file")
+	logLevelStr := flag.String(
+		"loglevel", "info", "logging level")
+	flag.Parse()
+
+	logLevel, _ := log.ParseLevel(*logLevelStr)
+	log.SetLevel(logLevel)
+
+	InitConfig(configFile)
+	initClient(&source, &sourceOnce, Source)
+	initClient(&destination, &destinationOnce, Destination)
+
+	checkTopics(&source)
+	checkTopics(&destination)
+
+	ctx, stop := signal.NotifyContext(
+		context.Background(), os.Interrupt, os.Kill)
+	if len(source.topics) > 0 {
+		wg.Add(1)
+		go forwardRecords(&source, &destination, ctx) // Push to destination
+	}
+	if len(destination.topics) > 0 {
+		wg.Add(1)
+		go forwardRecords(&destination, &source, ctx) // Pull from destination
+	}
+	wg.Wait()
+
+	ctx.Done()
+	stop()
+	shutdown()
+	log.Infoln("Agent stopped")
