@@ -1,3 +1,4 @@
 #!/bin/bash
 
-HELPTEXT='re
+HELPTEXT='redpanda-edge-agent build script
+  Usage: 
