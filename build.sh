@@ -1,4 +1,7 @@
 #!/bin/bash
 
 HELPTEXT='redpanda-edge-agent build script
-  Usage: 
+  Usage: ./build [flags]
+
+  Flags:
+  --archive  
