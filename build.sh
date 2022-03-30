@@ -4,4 +4,4 @@ HELPTEXT='redpanda-edge-agent build script
   Usage: ./build [flags]
 
   Flags:
-  --archive  
+  --archive  -a            Create a compres
