@@ -5,4 +5,5 @@ HELPTEXT='redpanda-edge-agent build script
 
   Flags:
   --archive  -a            Create a compressed archive file (using tar -czf)
-  --build    -b PLATFORM   Build for a specific platform (where PLATFORM 
+  --build    -b PLATFORM   Build for a specific platform (where PLATFORM is linux/amd64, for example)
+  -
