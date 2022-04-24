@@ -9,4 +9,4 @@ HELPTEXT='redpanda-edge-agent build script
   --build-all              Build for the following platforms: darwin/amd64, darwin/arm64, linux/amd64, linux/arm64
   --help     -h            Show this message
   --include-platform       Include platform in resulting filename (always enabled with --build-all)
-  --build-version VERSION  Use the gi
+  --build-version VERSION  Use the given version when naming the ar
