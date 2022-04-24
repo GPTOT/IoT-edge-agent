@@ -7,4 +7,5 @@ HELPTEXT='redpanda-edge-agent build script
   --archive  -a            Create a compressed archive file (using tar -czf)
   --build    -b PLATFORM   Build for a specific platform (where PLATFORM is linux/amd64, for example)
   --build-all              Build for the following platforms: darwin/amd64, darwin/arm64, linux/amd64, linux/arm64
-  --help     -h            Show this
+  --help     -h            Show this message
+  --include-platform       Inc
