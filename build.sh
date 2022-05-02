@@ -10,4 +10,7 @@ HELPTEXT='redpanda-edge-agent build script
   --help     -h            Show this message
   --include-platform       Include platform in resulting filename (always enabled with --build-all)
   --build-version VERSION  Use the given version when naming the archive file
-  --verbose  -v  
+  --verbose  -v            Print task details
+'
+
+PL
