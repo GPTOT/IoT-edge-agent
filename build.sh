@@ -13,4 +13,4 @@ HELPTEXT='redpanda-edge-agent build script
   --verbose  -v            Print task details
 '
 
-PL
+PLATFORMS=("`go env GOOS`/`go env 
