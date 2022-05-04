@@ -17,4 +17,7 @@ PLATFORMS=("`go env GOOS`/`go env GOARCH`")
 DEFAULT_PLATFORMS=("darwin/amd64" "darwin/arm64" "linux/amd64" "linux/arm64")
 FILENAME="redpanda-edge-agent"
 INCLUDE_PLATFORM=false
-ARCHI
+ARCHIVE=false
+VERBOSE=false
+
+while [ $# -gt 0 ]
