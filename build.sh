@@ -15,4 +15,6 @@ HELPTEXT='redpanda-edge-agent build script
 
 PLATFORMS=("`go env GOOS`/`go env GOARCH`")
 DEFAULT_PLATFORMS=("darwin/amd64" "darwin/arm64" "linux/amd64" "linux/arm64")
-FILENAME="redpanda-ed
+FILENAME="redpanda-edge-agent"
+INCLUDE_PLATFORM=false
+ARCHI
