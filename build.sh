@@ -20,4 +20,6 @@ INCLUDE_PLATFORM=false
 ARCHIVE=false
 VERBOSE=false
 
-while [ $# -gt 0 ]
+while [ $# -gt 0 ]; do
+  case $1 in
+  -h | --help) 
