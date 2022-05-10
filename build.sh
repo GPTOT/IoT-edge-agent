@@ -23,4 +23,5 @@ VERBOSE=false
 while [ $# -gt 0 ]; do
   case $1 in
   -h | --help) echo "$HELPTEXT"; exit;;
-  -a | --archive) 
+  -a | --archive) ARCHIVE=true;shift;;
+  -b | --build
