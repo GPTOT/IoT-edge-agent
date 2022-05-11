@@ -24,4 +24,5 @@ while [ $# -gt 0 ]; do
   case $1 in
   -h | --help) echo "$HELPTEXT"; exit;;
   -a | --archive) ARCHIVE=true;shift;;
-  -b | --build
+  -b | --build) PLATFORMS=("$2");shift 2;;
+  --bui
