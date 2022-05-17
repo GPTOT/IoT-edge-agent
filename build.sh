@@ -26,4 +26,5 @@ while [ $# -gt 0 ]; do
   -a | --archive) ARCHIVE=true;shift;;
   -b | --build) PLATFORMS=("$2");shift 2;;
   --build-all) PLATFORMS=(${DEFAULT_PLATFORMS[*]});INCLUDE_PLATFORM=true;shift;;
-  --build-ve
+  --build-version) VERSION=$2;shift 2;;
+  --inclu
