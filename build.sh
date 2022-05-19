@@ -31,4 +31,6 @@ while [ $# -gt 0 ]; do
   -v | --verbose) VERBOSE=true;shift;;
   *) break
   esac
-don
+done
+
+# determine if script is ran from
