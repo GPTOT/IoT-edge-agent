@@ -28,4 +28,7 @@ while [ $# -gt 0 ]; do
   --build-all) PLATFORMS=(${DEFAULT_PLATFORMS[*]});INCLUDE_PLATFORM=true;shift;;
   --build-version) VERSION=$2;shift 2;;
   --include-platform) INCLUDE_PLATFORM=true;shift;;
-  -v | --verbose) VERBOSE=
+  -v | --verbose) VERBOSE=true;shift;;
+  *) break
+  esac
+don
