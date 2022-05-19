@@ -27,4 +27,5 @@ while [ $# -gt 0 ]; do
   -b | --build) PLATFORMS=("$2");shift 2;;
   --build-all) PLATFORMS=(${DEFAULT_PLATFORMS[*]});INCLUDE_PLATFORM=true;shift;;
   --build-version) VERSION=$2;shift 2;;
-  --include-platform) INCLUDE_PLATFORM=true;shift
+  --include-platform) INCLUDE_PLATFORM=true;shift;;
+  -v | --verbose) VERBOSE=
