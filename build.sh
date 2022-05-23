@@ -33,4 +33,6 @@ while [ $# -gt 0 ]; do
   esac
 done
 
-# determine if script is ran from
+# determine if script is ran from ./docker or ./
+AGENT_PATH="./agent/"
+CWD=$
