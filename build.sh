@@ -35,4 +35,6 @@ done
 
 # determine if script is ran from ./docker or ./
 AGENT_PATH="./agent/"
-CWD=$
+CWD=${PWD##*/}
+CWD=${CWD:-/}
+if [ $CWD == d
