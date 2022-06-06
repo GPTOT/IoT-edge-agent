@@ -37,4 +37,5 @@ done
 AGENT_PATH="./agent/"
 CWD=${PWD##*/}
 CWD=${CWD:-/}
-if [ $CWD == d
+if [ $CWD == docker ]; then
+  AGENT_PATH=".$AGENT_PATH
