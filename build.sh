@@ -38,4 +38,9 @@ AGENT_PATH="./agent/"
 CWD=${PWD##*/}
 CWD=${CWD:-/}
 if [ $CWD == docker ]; then
-  AGENT_PATH=".$AGENT_PATH
+  AGENT_PATH=".$AGENT_PATH"
+fi
+
+for i in "${PLATFORMS[@]}"
+do
+  
