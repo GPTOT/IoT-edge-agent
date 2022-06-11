@@ -44,4 +44,6 @@ fi
 for i in "${PLATFORMS[@]}"
 do
   if [ $VERBOSE == true ]; then
-    echo 
+    echo "Building release for $i..."
+  fi
+  
