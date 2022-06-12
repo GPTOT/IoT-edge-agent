@@ -46,4 +46,5 @@ do
   if [ $VERBOSE == true ]; then
     echo "Building release for $i..."
   fi
-  
+  platform=(${i//\// })
+  if [ $INCLUDE_P
