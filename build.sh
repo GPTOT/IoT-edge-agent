@@ -47,4 +47,5 @@ do
     echo "Building release for $i..."
   fi
   platform=(${i//\// })
-  if [ $INCLUDE_P
+  if [ $INCLUDE_PLATFORM == true ]; then
+    FILENAME=$FILENAME-${p
