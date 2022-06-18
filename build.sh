@@ -48,4 +48,6 @@ do
   fi
   platform=(${i//\// })
   if [ $INCLUDE_PLATFORM == true ]; then
-    FILENAME=$FILENAME-${p
+    FILENAME=$FILENAME-${platform[0]}-${platform[1]}
+  fi
+  if [ $VE
