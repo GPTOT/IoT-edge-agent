@@ -51,4 +51,7 @@ do
     FILENAME=$FILENAME-${platform[0]}-${platform[1]}
   fi
   if [ $VERSION ]; then
-    FILENAME=$FILENA
+    FILENAME=$FILENAME-$VERSION
+  fi
+  
+  GOOS=${pl
