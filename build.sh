@@ -54,4 +54,4 @@ do
     FILENAME=$FILENAME-$VERSION
   fi
   
-  GOOS=${pl
+  GOOS=${platform[0]} GOARCH=${platform[1]} go bui
