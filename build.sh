@@ -50,4 +50,5 @@ do
   if [ $INCLUDE_PLATFORM == true ]; then
     FILENAME=$FILENAME-${platform[0]}-${platform[1]}
   fi
-  if [ $VE
+  if [ $VERSION ]; then
+    FILENAME=$FILENA
