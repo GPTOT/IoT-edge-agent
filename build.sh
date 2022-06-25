@@ -63,4 +63,5 @@ do
   if [ $ARCHIVE == true ]; then
     archive="$FILENAME.tar.gz"
     tar -czf ${archive} $FILENAME
-    if [ 
+    if [ $VERBOSE == true ]; then
+    echo "$archive
