@@ -54,4 +54,6 @@ do
     FILENAME=$FILENAME-$VERSION
   fi
   
-  GOOS=${platform[0]} GOARCH=${platform[1]} go build -a -o $FILENAME $AGENT_PAT
+  GOOS=${platform[0]} GOARCH=${platform[1]} go build -a -o $FILENAME $AGENT_PATH
+  if [ ! -f "${FILENAME}" ]; then
+      ech
