@@ -61,4 +61,5 @@ do
   fi
 
   if [ $ARCHIVE == true ]; then
-    arch
+    archive="$FILENAME.tar.gz"
+    t
