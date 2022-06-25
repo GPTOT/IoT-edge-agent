@@ -60,4 +60,5 @@ do
       exit 1
   fi
 
- 
+  if [ $ARCHIVE == true ]; then
+    arch
