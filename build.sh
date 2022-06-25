@@ -62,4 +62,5 @@ do
 
   if [ $ARCHIVE == true ]; then
     archive="$FILENAME.tar.gz"
-    t
+    tar -czf ${archive} $FILENAME
+    if [ 
