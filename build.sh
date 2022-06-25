@@ -56,4 +56,8 @@ do
   
   GOOS=${platform[0]} GOARCH=${platform[1]} go build -a -o $FILENAME $AGENT_PATH
   if [ ! -f "${FILENAME}" ]; then
-      echo "Error building file: ${FILENA
+      echo "Error building file: ${FILENAME}"
+      exit 1
+  fi
+
+ 
