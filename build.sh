@@ -64,4 +64,7 @@ do
     archive="$FILENAME.tar.gz"
     tar -czf ${archive} $FILENAME
     if [ $VERBOSE == true ]; then
-    echo "$archive
+    echo "$archive created"
+    fi
+    rm $FILENAME
+  
