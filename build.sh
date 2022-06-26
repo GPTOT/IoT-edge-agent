@@ -69,4 +69,6 @@ do
     rm $FILENAME
   else
     if [ $VERBOSE == true ]; then
-      
+      echo "$FILENAME created"
+    fi
+  fi
