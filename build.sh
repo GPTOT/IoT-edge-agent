@@ -72,3 +72,4 @@ do
       echo "$FILENAME created"
     fi
   fi
+done
