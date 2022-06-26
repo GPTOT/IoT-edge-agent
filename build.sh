@@ -67,4 +67,6 @@ do
     echo "$archive created"
     fi
     rm $FILENAME
-  
+  else
+    if [ $VERBOSE == true ]; then
+      
