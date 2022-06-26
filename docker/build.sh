@@ -1,3 +1,3 @@
 #!/bin/bash
 
-HELP
+HELPTEXT='redpanda-edge-agent docker build scr
