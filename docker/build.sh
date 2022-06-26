@@ -4,4 +4,4 @@ HELPTEXT='redpanda-edge-agent docker build script
   Usage: ./build [flags]
 
   Flags:
-  --usern
+  --username  -u USERNAME  The Docker us
