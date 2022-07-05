@@ -5,4 +5,5 @@ HELPTEXT='redpanda-edge-agent docker build script
 
   Flags:
   --username  -u USERNAME  The Docker username for pushing to the registry
-  --no-push                The script will not push the build to th
+  --no-push                The script will not push the build to the registry
+  --tag       -t TAG     
