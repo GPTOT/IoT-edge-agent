@@ -9,4 +9,6 @@ HELPTEXT='redpanda-edge-agent docker build script
   --tag       -t TAG       The build tag (default "latest")
 '
 
-FILENAM
+FILENAME="redpanda-edge-agent"
+PUSH=true
+TAG="lat
