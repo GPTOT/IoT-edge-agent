@@ -14,4 +14,6 @@ PUSH=true
 TAG="latest"
 USERNAME="redpanda"
 
-while [ $# 
+while [ $# -gt 0 ]; do
+  case $1 in
+  -h | --help) echo "
