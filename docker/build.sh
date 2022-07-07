@@ -11,4 +11,7 @@ HELPTEXT='redpanda-edge-agent docker build script
 
 FILENAME="redpanda-edge-agent"
 PUSH=true
-TAG="lat
+TAG="latest"
+USERNAME="redpanda"
+
+while [ $# 
