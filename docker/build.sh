@@ -16,4 +16,5 @@ USERNAME="redpanda"
 
 while [ $# -gt 0 ]; do
   case $1 in
-  -h | --help) echo "
+  -h | --help) echo "$HELPTEXT"; exit;;
+  --no-push) P
