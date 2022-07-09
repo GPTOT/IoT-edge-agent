@@ -17,4 +17,5 @@ USERNAME="redpanda"
 while [ $# -gt 0 ]; do
   case $1 in
   -h | --help) echo "$HELPTEXT"; exit;;
-  --no-push) P
+  --no-push) PUSH=false;shift;;
+  -t | --tag) T
