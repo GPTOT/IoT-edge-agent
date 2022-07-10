@@ -19,4 +19,9 @@ while [ $# -gt 0 ]; do
   -h | --help) echo "$HELPTEXT"; exit;;
   --no-push) PUSH=false;shift;;
   -t | --tag) TAG=$2;shift 2;;
-  -u | --username) USERNA
+  -u | --username) USERNAME=$2;shift 2;;
+  *) break
+  esac
+done
+
+CWD=${PWD#
