@@ -18,4 +18,5 @@ while [ $# -gt 0 ]; do
   case $1 in
   -h | --help) echo "$HELPTEXT"; exit;;
   --no-push) PUSH=false;shift;;
-  -t | --tag) T
+  -t | --tag) TAG=$2;shift 2;;
+  -u | --username) USERNA
