@@ -28,4 +28,8 @@ CWD=${PWD##*/}
 CWD=${CWD:-/}
 if [ $CWD == docker ]; then
   cd ..
-f
+fi
+
+FILENAME="$USERNAME/$FILENAME:$TAG"
+
+d
