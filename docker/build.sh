@@ -24,4 +24,8 @@ while [ $# -gt 0 ]; do
   esac
 done
 
-CWD=${PWD#
+CWD=${PWD##*/}
+CWD=${CWD:-/}
+if [ $CWD == docker ]; then
+  cd ..
+f
