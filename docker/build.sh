@@ -32,4 +32,4 @@ fi
 
 FILENAME="$USERNAME/$FILENAME:$TAG"
 
-d
+docker build -f docker/Dockerfil
