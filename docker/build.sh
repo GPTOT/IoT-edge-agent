@@ -33,4 +33,6 @@ fi
 FILENAME="$USERNAME/$FILENAME:$TAG"
 
 docker build -f docker/Dockerfile -t $FILENAME .
-if [ $PUSH == true 
+if [ $PUSH == true ]; then
+  docker push $FILENAME
+fi
