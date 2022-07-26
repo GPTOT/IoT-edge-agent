@@ -7,4 +7,4 @@ This [Docker Compose](.docker-compose-redpanda.yaml) file spins up a local envir
 
 ## Prerequisites
 
-1. The agent communicates wi
+1. The agent communicates with the source and destinations clusters over TLS en
