@@ -7,4 +7,4 @@ This [Docker Compose](.docker-compose-redpanda.yaml) file spins up a local envir
 
 ## Prerequisites
 
-1. The agent communicates with the source and destinations clusters over TLS enabled interfaces, so before starting the containers, run [generate-certs.sh](./generate-certs.sh) to create the necessary certificates. The resulting `./certs` directory is mounted on the containers in the [compose](./compose.yaml) configuration. *Note: On Linux, it may b
+1. The agent communicates with the source and destinations clusters over TLS enabled interfaces, so before starting the containers, run [generate-certs.sh](./generate-certs.sh) to create the necessary certificates. The resulting `./certs` directory is mounted on the containers in the [compose](./compose.yaml) configuration. *Note: On Linux, it may be necessary to run `sudo chmod -R 777 certs` t
