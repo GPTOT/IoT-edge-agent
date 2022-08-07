@@ -12,4 +12,6 @@ This [Docker Compose](.docker-compose-redpanda.yaml) file spins up a local envir
 
 ## Start the containers
 
-``
+```bash
+cd example
+docker-compose -f docker-compos
