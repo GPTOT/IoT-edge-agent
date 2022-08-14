@@ -23,4 +23,4 @@ docker-compose -f docker-compose-redpanda.yaml up -d
 
 ## Test the agent
 
-Open a new 
+Open a new terminal and produce some messages 
