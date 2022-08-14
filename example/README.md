@@ -18,4 +18,9 @@ docker-compose -f docker-compose-redpanda.yaml up -d
 [+] Running 3/3
  ⠿ Network example_redpanda_network  Created
  ⠿ Container redpanda_source         Started
- ⠿ Container redpanda_destination    Sta
+ ⠿ Container redpanda_destination    Started
+```
+
+## Test the agent
+
+Open a new 
