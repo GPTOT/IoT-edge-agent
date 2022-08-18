@@ -26,4 +26,5 @@ docker-compose -f docker-compose-redpanda.yaml up -d
 Open a new terminal and produce some messages to the source's `telemetryB` topic (note that the example [agent](./agent.yaml) is configured to create the topics on startup):
 
 ```bash
-export REDPA
+export REDPANDA_BROKERS=localhost:19092
+for i in
