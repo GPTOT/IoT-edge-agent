@@ -23,4 +23,7 @@ docker-compose -f docker-compose-redpanda.yaml up -d
 
 ## Test the agent
 
-Open a new terminal and produce some messages to the source's `telemetryB` topic (note that the example [agent](./agent.yaml) is configured to create
+Open a new terminal and produce some messages to the source's `telemetryB` topic (note that the example [agent](./agent.yaml) is configured to create the topics on startup):
+
+```bash
+export REDPA
