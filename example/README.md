@@ -27,4 +27,4 @@ Open a new terminal and produce some messages to the source's `telemetryB` topic
 
 ```bash
 export REDPANDA_BROKERS=localhost:19092
-for i in
+for i in {1..60}; do echo $(cat /dev/urandom | head -c
