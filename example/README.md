@@ -27,4 +27,7 @@ Open a new terminal and produce some messages to the source's `telemetryB` topic
 
 ```bash
 export REDPANDA_BROKERS=localhost:19092
-for i in {1..60}; do echo $(cat /dev/urandom | head -c10 | base64) | rpk topic produce 
+for i in {1..60}; do echo $(cat /dev/urandom | head -c10 | base64) | rpk topic produce telemetryB; sleep 1; done
+```
+
+The
