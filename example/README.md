@@ -33,4 +33,7 @@ for i in {1..60}; do echo $(cat /dev/urandom | head -c10 | base64) | rpk topic p
 The agent will forward the messages to a topic with the same name on the destination. Open a second terminal and consume the messages:
 
 ```bash
-export REDPANDA_BROKERS=localhost:29
+export REDPANDA_BROKERS=localhost:29092
+rpk topic consume telemetryC
+{
+  "top
