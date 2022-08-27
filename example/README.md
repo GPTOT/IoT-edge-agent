@@ -36,4 +36,5 @@ The agent will forward the messages to a topic with the same name on the destina
 export REDPANDA_BROKERS=localhost:29092
 rpk topic consume telemetryC
 {
-  "top
+  "topic": "telemetryC",
+  "key": "a0f1fd421b
