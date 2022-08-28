@@ -37,4 +37,6 @@ export REDPANDA_BROKERS=localhost:29092
 rpk topic consume telemetryC
 {
   "topic": "telemetryC",
-  "key": "a0f1fd421b
+  "key": "a0f1fd421b85",
+  "value": "aZ7NEkkd977GXQ==",
+ 
