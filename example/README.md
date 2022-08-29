@@ -44,4 +44,6 @@ rpk topic consume telemetryC
   "offset": 0
 }
 {
-  "topic"
+  "topic": "telemetryC",
+  "key": "a0f1fd421b85",
+  "value"
