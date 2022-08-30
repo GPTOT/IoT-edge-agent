@@ -47,4 +47,5 @@ rpk topic consume telemetryC
   "topic": "telemetryC",
   "key": "a0f1fd421b85",
   "value": "cJRS+n9mJCAxzg==",
-  "timestamp": 16747
+  "timestamp": 1674753399965,
+  "partition": 0,
