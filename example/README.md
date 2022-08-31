@@ -49,3 +49,7 @@ rpk topic consume telemetryC
   "value": "cJRS+n9mJCAxzg==",
   "timestamp": 1674753399965,
   "partition": 0,
+  "offset": 1
+}
+{
+  "topic": "telemetryC"
