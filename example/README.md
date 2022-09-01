@@ -54,4 +54,5 @@ rpk topic consume telemetryC
 {
   "topic": "telemetryC",
   "key": "a0f1fd421b85",
-  "value": 
+  "value": "sNPcw6YWBpQl9g==",
+  "times
