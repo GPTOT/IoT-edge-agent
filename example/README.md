@@ -57,4 +57,9 @@ rpk topic consume telemetryC
   "value": "sNPcw6YWBpQl9g==",
   "timestamp": 1674753401025,
   "partition": 0,
-  
+  "offset": 2
+}
+...
+```
+
+## Tail the ag
