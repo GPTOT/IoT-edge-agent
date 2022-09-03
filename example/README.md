@@ -62,4 +62,7 @@ rpk topic consume telemetryC
 ...
 ```
 
-## Tail the ag
+## Tail the agent log
+
+```bash
+docker exec redpanda_sou
