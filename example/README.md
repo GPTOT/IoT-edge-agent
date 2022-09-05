@@ -65,4 +65,5 @@ rpk topic consume telemetryC
 ## Tail the agent log
 
 ```bash
-docker exec redpanda_source tail -100f /var/lib/r
+docker exec redpanda_source tail -100f /var/lib/redpanda/data/agent.log
+time="2023-01
