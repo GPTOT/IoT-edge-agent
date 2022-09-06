@@ -66,4 +66,5 @@ rpk topic consume telemetryC
 
 ```bash
 docker exec redpanda_source tail -100f /var/lib/redpanda/data/agent.log
-time="2023-01-26T17:16:15Z" level=info msg="Init config from file: /etc/redpanda
+time="2023-01-26T17:16:15Z" level=info msg="Init config from file: /etc/redpanda/agent.yaml"
+time="2023-01-26T17:16
