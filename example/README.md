@@ -72,4 +72,4 @@ time="2023-01-26T17:16:15Z" level=info msg="Added push topic: telemetryA > telem
 time="2023-01-26T17:16:15Z" level=info msg="Added push topic: telemetryB > telemetryC"
 time="2023-01-26T17:16:15Z" level=info msg="Created source client"
 time="2023-01-26T17:16:15Z" level=debug msg="source broker: {\"NodeID\":0,\"Port\":9092,\"Host\":\"172.24.1.10\",\"Rack\":null}"
-time="2023
+time="2023-01-26T17:16:15Z" level=info msg
