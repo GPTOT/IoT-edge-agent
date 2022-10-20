@@ -75,4 +75,4 @@ time="2023-01-26T17:16:15Z" level=debug msg="source broker: {\"NodeID\":0,\"Port
 time="2023-01-26T17:16:15Z" level=info msg="Added pull topic: configA < configA"
 time="2023-01-26T17:16:15Z" level=info msg="Added pull topic: configA < configB"
 time="2023-01-26T17:16:15Z" level=info msg="Created destination client"
-time="2023-0
+time="2023-01-26T17:16:15Z" level=debug msg="de
