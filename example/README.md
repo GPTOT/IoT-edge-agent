@@ -78,4 +78,4 @@ time="2023-01-26T17:16:15Z" level=info msg="Created destination client"
 time="2023-01-26T17:16:15Z" level=debug msg="destination broker: {\"NodeID\":0,\"Port\":9092,\"Host\":\"172.24.1.20\",\"Rack\":null}"
 time="2023-01-26T17:16:15Z" level=info msg="Created topic 'telemetryA' on source"
 time="2023-01-26T17:16:15Z" level=info msg="Created topic 'telemetryB' on source"
-time="2023-01-2
+time="2023-01-26T17:16:15Z" level=info msg="Cr
