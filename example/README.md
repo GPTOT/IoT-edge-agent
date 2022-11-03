@@ -79,4 +79,4 @@ time="2023-01-26T17:16:15Z" level=debug msg="destination broker: {\"NodeID\":0,\
 time="2023-01-26T17:16:15Z" level=info msg="Created topic 'telemetryA' on source"
 time="2023-01-26T17:16:15Z" level=info msg="Created topic 'telemetryB' on source"
 time="2023-01-26T17:16:15Z" level=info msg="Created topic 'configA' on source"
-time="2023-01-26T17:16:15Z" level=info msg="Cre
+time="2023-01-26T17:16:15Z" level=info msg="Created topic 'telemetryA' on destin
