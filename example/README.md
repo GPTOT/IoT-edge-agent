@@ -81,4 +81,4 @@ time="2023-01-26T17:16:15Z" level=info msg="Created topic 'telemetryB' on source
 time="2023-01-26T17:16:15Z" level=info msg="Created topic 'configA' on source"
 time="2023-01-26T17:16:15Z" level=info msg="Created topic 'telemetryA' on destination"
 time="2023-01-26T17:16:15Z" level=info msg="Created topic 'telemetryC' on destination"
-time="2023-01-26T1
+time="2023-01-26T17:16:15Z" level=info msg="Creat
