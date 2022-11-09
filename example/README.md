@@ -83,4 +83,4 @@ time="2023-01-26T17:16:15Z" level=info msg="Created topic 'telemetryA' on destin
 time="2023-01-26T17:16:15Z" level=info msg="Created topic 'telemetryC' on destination"
 time="2023-01-26T17:16:15Z" level=info msg="Created topic 'configA' on destination"
 time="2023-01-26T17:16:15Z" level=info msg="Created topic 'configB' on destination"
-time="2023-01-26T17:16:15Z" level=i
+time="2023-01-26T17:16:15Z" level=info msg="Forwarding records from 'desti
