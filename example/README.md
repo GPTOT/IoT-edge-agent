@@ -89,4 +89,4 @@ time="2023-01-26T17:16:15Z" level=debug msg="Polling for records..." id=source
 time="2023-01-26T17:16:15Z" level=debug msg="Polling for records..." id=destination
 time="2023-01-26T17:16:38Z" level=debug msg="Consumed 1 records" id=source
 time="2023-01-26T17:16:38Z" level=debug msg="Mapping topic name 'telemetryB' to 'telemetryC'" id=source
-time="2023-01-26T17:16:39Z" level=debug msg="Sent 1 records t
+time="2023-01-26T17:16:39Z" level=debug msg="Sent 1 records to 'destination'" id=source
