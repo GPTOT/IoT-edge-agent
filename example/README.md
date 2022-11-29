@@ -90,4 +90,5 @@ time="2023-01-26T17:16:15Z" level=debug msg="Polling for records..." id=destinat
 time="2023-01-26T17:16:38Z" level=debug msg="Consumed 1 records" id=source
 time="2023-01-26T17:16:38Z" level=debug msg="Mapping topic name 'telemetryB' to 'telemetryC'" id=source
 time="2023-01-26T17:16:39Z" level=debug msg="Sent 1 records to 'destination'" id=source
-time="2023-01-26T17:16:39Z" level=debug msg="Committing offsets: {\"telemetryB\":{\"0\":{\"Epoch\":1,\"Offset\":1}
+time="2023-01-26T17:16:39Z" level=debug msg="Committing offsets: {\"telemetryB\":{\"0\":{\"Epoch\":1,\"Offset\":1}}}" id=source
+time="2023-01-26
