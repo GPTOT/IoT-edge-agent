@@ -93,4 +93,5 @@ time="2023-01-26T17:16:39Z" level=debug msg="Sent 1 records to 'destination'" id
 time="2023-01-26T17:16:39Z" level=debug msg="Committing offsets: {\"telemetryB\":{\"0\":{\"Epoch\":1,\"Offset\":1}}}" id=source
 time="2023-01-26T17:16:39Z" level=debug msg="Offsets committed" id=source
 time="2023-01-26T17:16:39Z" level=debug msg="Polling for records..." id=source
-..
+...
+```
