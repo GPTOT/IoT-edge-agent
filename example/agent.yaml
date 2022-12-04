@@ -1,4 +1,5 @@
 create_topics: true
 source:
   name: "source"
-  bootstrap_servers: 172.24.1.10:9092 #
+  bootstrap_servers: 172.24.1.10:9092 # use secured internal interface
+  
