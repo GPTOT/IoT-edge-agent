@@ -1,3 +1,4 @@
 create_topics: true
 source:
-  name:
+  name: "source"
+  bootstrap_servers: 172.24.1.10:9092 #
