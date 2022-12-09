@@ -7,4 +7,5 @@ source:
     - telemetryA
     - telemetryB:telemetryC
   tls:
- 
+    enabled: true
+    client_ke
