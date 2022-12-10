@@ -8,4 +8,5 @@ source:
     - telemetryB:telemetryC
   tls:
     enabled: true
-    client_key: "/etc/redpanda/certs/agent
+    client_key: "/etc/redpanda/certs/agent.key"
+    client_cert: "/etc/redpa
