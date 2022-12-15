@@ -9,4 +9,5 @@ source:
   tls:
     enabled: true
     client_key: "/etc/redpanda/certs/agent.key"
-    client_cert: "/etc/redpa
+    client_cert: "/etc/redpanda/certs/agent.crt"
+    ca_cert: "/e
