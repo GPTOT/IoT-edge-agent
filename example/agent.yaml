@@ -13,4 +13,4 @@ source:
     ca_cert: "/etc/redpanda/certs/ca.crt"
 destination:
   name: "destination"
-  bootstrap_
+  bootstrap_servers: 172.24.1.20:9092 # use secured internal 
