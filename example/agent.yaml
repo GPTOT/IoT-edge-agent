@@ -14,4 +14,5 @@ source:
 destination:
   name: "destination"
   bootstrap_servers: 172.24.1.20:9092 # use secured internal interface
-  max_version: "3.0.0" # m
+  max_version: "3.0.0" # maximum kafka protocol version
+  # 
