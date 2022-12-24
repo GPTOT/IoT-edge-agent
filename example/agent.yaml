@@ -20,4 +20,5 @@ destination:
     - configA
     - _schemas
   tls:
-    enabl
+    enabled: true
+    client_key: "/etc/redpan
