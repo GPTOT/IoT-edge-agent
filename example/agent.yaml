@@ -21,4 +21,5 @@ destination:
     - _schemas
   tls:
     enabled: true
-    client_key: "/etc/redpan
+    client_key: "/etc/redpanda/certs/agent.key"
+    client_
