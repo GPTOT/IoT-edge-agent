@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
-rm -f redpan
+rm -f redpanda-edge-agent
+cd ../agent
+env GOOS=l
