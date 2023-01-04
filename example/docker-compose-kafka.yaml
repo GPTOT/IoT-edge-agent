@@ -33,3 +33,36 @@ services:
     networks:
       redpanda_network:
         ipv4_address: "172.24.1.10"
+    volumes:
+      - ./certs:/etc/redpanda/certs
+      - ./redpanda-edge-agent:/usr/local/bin/redpanda-edge-agent
+      - ./agent.yaml:/etc/redpanda/agent.yaml
+      - ./supervisor.conf:/etc/supervisord.conf
+    ports:
+      - "19092:19092"
+      - "19644:9644"
+      - "18081:8081"
+  zookeeper:
+    image: bitnami/zookeeper:3.8.1
+    container_name: zookeeper
+    networks:
+      redpanda_network:
+        ipv4_address: "172.24.1.30"
+    ports:
+      - "2181:2181"
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+  kafka:
+    image: bitnami/kafka:3.3.2
+    container_name: kafka_destination
+    environment:
+      - KAFKA_BROKER_ID=1
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=172.24.1.30:2181
+      - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=INTERNAL
+      - KAFKA_CFG_LISTENERS=PLAINTEXT://:29092,INTERNAL://:9092
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT,INTERNAL:SSL
+      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://127.0.0.1:29092,INTERNAL://172.24.1.20:9092
+      - ALLOW_PLAINTEXT_LISTENER=yes
+      - KAFKA_CERTIFICATE_PASSWORD=apache
+      # - KAFKA_CFG_INTER_BROKER_PROTOCOL_VERSION=2.6
+      - BITNAMI_DEBUG=true
