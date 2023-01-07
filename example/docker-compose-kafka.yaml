@@ -96,3 +96,13 @@ services:
       - SCHEMA_REGISTRY_KAFKASTORE_TOPIC=_schemas
       - SCHEMA_REGISTRY_DEBUG=true
     networks:
+      redpanda_network:
+        ipv4_address: "172.24.1.40"
+    volumes:
+      - "./certs/kafka.keystore.jks:/etc/kafka/secrets/schema-registry.keystore.jks"
+      - "./certs/kafka.truststore.jks:/etc/kafka/secrets/schema-registry.truststore.jks"
+    ports:
+      - "28081:8081"
+    depends_on:
+      - kafka
+      - zookeeper
