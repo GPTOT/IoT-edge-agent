@@ -1,2 +1,5 @@
 networks:
-  redpanda_net
+  redpanda_network:
+    driver: bridge
+    ipam:
+    
