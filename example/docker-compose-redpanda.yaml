@@ -7,4 +7,4 @@ networks:
         gateway: "172.24.1.1"
 services:
   redpanda_source:
-   
+    image: docker.vectorized.io/vectoriz
