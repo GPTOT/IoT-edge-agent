@@ -8,4 +8,6 @@ networks:
 services:
   redpanda_source:
     image: docker.vectorized.io/vectorized/redpanda:v22.3.11
-    container_nam
+    container_name: redpanda_source
+    command:
+   
