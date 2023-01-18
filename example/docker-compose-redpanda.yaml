@@ -12,4 +12,5 @@ services:
     command:
       - redpanda
       - start
-   
+      - --kafka-addr
+      - internal://0.
