@@ -13,4 +13,4 @@ services:
       - redpanda
       - start
       - --kafka-addr
-      - internal://0.
+      - internal://0.0.0.0:9092,external://172.
