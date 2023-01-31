@@ -15,4 +15,5 @@ services:
       - --kafka-addr
       - internal://0.0.0.0:9092,external://172.24.1.10:19092
       - --advertise-kafka-addr
-      - internal://172.24.1.10:909
+      - internal://172.24.1.10:9092,external://127.0.0.1:19092
+      
