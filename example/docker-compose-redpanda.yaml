@@ -19,4 +19,5 @@ services:
       - --overprovisioned
       - --check=false
       - --set redpanda.auto_create_topics_enabled=true
-      - "--set redpa
+      - "--set redpanda.kafka_api_tls={\
+          'name':'internal
