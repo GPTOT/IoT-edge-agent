@@ -20,4 +20,4 @@ services:
       - --check=false
       - --set redpanda.auto_create_topics_enabled=true
       - "--set redpanda.kafka_api_tls={\
-          'name':'internal
+          'name':'internal','enabled':true,'require_client_a
