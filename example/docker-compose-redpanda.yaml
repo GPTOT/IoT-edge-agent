@@ -21,4 +21,5 @@ services:
       - --set redpanda.auto_create_topics_enabled=true
       - "--set redpanda.kafka_api_tls={\
           'name':'internal','enabled':true,'require_client_auth':true,\
-          'cert_file':'/etc/re
+          'cert_file':'/etc/redpanda/certs/src.crt',\
+    
