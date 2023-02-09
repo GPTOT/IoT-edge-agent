@@ -22,4 +22,5 @@ services:
       - "--set redpanda.kafka_api_tls={\
           'name':'internal','enabled':true,'require_client_auth':true,\
           'cert_file':'/etc/redpanda/certs/src.crt',\
-          'key_file':'/etc/redpanda/certs
+          'key_file':'/etc/redpanda/certs/src.key',\
+          'truststore_file
