@@ -26,4 +26,5 @@ services:
           'truststore_file':'/etc/redpanda/certs/ca.crt'}"
       - "--set redpanda.admin_api_tls={\
           'name':'internal','enabled':true,'require_client_auth':true,\
-          'cert_file':'/etc/re
+          'cert_file':'/etc/redpanda/certs/src.crt',\
+          '
