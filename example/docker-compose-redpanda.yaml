@@ -30,4 +30,5 @@ services:
           'key_file':'/etc/redpanda/certs/src.key',\
           'truststore_file':'/etc/redpanda/certs/ca.crt'}"
     networks:
-    
+      redpanda_network:
+        ipv4_address: "
