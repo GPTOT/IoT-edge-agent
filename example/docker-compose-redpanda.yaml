@@ -31,4 +31,6 @@ services:
           'truststore_file':'/etc/redpanda/certs/ca.crt'}"
     networks:
       redpanda_network:
-        ipv4_address: "
+        ipv4_address: "172.24.1.10"
+    volumes:
+      - ./
