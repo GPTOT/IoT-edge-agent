@@ -34,4 +34,4 @@ services:
         ipv4_address: "172.24.1.10"
     volumes:
       - ./certs:/etc/redpanda/certs
-      - ./redpand
+      - ./redpanda-edge-agent:/usr/local/bin/redpanda-ed
