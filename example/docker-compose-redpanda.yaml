@@ -33,4 +33,5 @@ services:
       redpanda_network:
         ipv4_address: "172.24.1.10"
     volumes:
-      - ./
+      - ./certs:/etc/redpanda/certs
+      - ./redpand
