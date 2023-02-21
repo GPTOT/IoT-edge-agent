@@ -35,4 +35,5 @@ services:
     volumes:
       - ./certs:/etc/redpanda/certs
       - ./redpanda-edge-agent:/usr/local/bin/redpanda-edge-agent
-      - ./agent.yaml:/etc/
+      - ./agent.yaml:/etc/redpanda/agent.yaml
+      - ./s
