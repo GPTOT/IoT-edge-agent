@@ -36,4 +36,4 @@ services:
       - ./certs:/etc/redpanda/certs
       - ./redpanda-edge-agent:/usr/local/bin/redpanda-edge-agent
       - ./agent.yaml:/etc/redpanda/agent.yaml
-      - ./s
+      - ./supervisor.conf:/etc/supervisord.co
