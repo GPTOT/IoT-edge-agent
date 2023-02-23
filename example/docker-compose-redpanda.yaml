@@ -36,4 +36,6 @@ services:
       - ./certs:/etc/redpanda/certs
       - ./redpanda-edge-agent:/usr/local/bin/redpanda-edge-agent
       - ./agent.yaml:/etc/redpanda/agent.yaml
-      - ./supervisor.conf:/etc/supervisord.co
+      - ./supervisor.conf:/etc/supervisord.conf
+    ports:
+      - "19092:1
