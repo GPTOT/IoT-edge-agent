@@ -40,3 +40,5 @@ services:
     ports:
       - "19092:19092"
       - "19644:9644"
+      - "18081:8081"
+  redpanda_desti
