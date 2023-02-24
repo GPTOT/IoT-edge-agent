@@ -38,4 +38,5 @@ services:
       - ./agent.yaml:/etc/redpanda/agent.yaml
       - ./supervisor.conf:/etc/supervisord.conf
     ports:
-      - "19092:1
+      - "19092:19092"
+      - "19644:9644"
