@@ -42,4 +42,5 @@ services:
       - "19644:9644"
       - "18081:8081"
   redpanda_destination:
-    image: docker.vectorized.io/vec
+    image: docker.vectorized.io/vectorized/redpanda:v22.3.11
+    container_name: re
