@@ -45,4 +45,6 @@ services:
     image: docker.vectorized.io/vectorized/redpanda:v22.3.11
     container_name: redpanda_destination
     command:
-      - r
+      - redpanda
+      - start
+      - --kafka-a
