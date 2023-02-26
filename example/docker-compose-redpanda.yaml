@@ -43,4 +43,6 @@ services:
       - "18081:8081"
   redpanda_destination:
     image: docker.vectorized.io/vectorized/redpanda:v22.3.11
-    container_name: re
+    container_name: redpanda_destination
+    command:
+      - r
