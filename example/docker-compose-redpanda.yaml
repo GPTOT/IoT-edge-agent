@@ -50,4 +50,4 @@ services:
       - --kafka-addr
       - internal://0.0.0.0:9092,external://172.24.1.20:29092
       - --advertise-kafka-addr
-      - internal://172
+      - internal://172.24.1.20:9092,external://127.0.0.1:29
