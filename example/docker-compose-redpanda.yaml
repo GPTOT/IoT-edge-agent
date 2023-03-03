@@ -52,4 +52,5 @@ services:
       - --advertise-kafka-addr
       - internal://172.24.1.20:9092,external://127.0.0.1:29092
       - --overprovisioned
-      - 
+      - --check=false
+      - --s
