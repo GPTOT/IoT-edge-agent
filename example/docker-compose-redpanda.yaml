@@ -53,4 +53,5 @@ services:
       - internal://172.24.1.20:9092,external://127.0.0.1:29092
       - --overprovisioned
       - --check=false
-      - --set redpanda.auto_create_topics_enabled
+      - --set redpanda.auto_create_topics_enabled=true
+      - "--set redpanda.kafka_api_tls={
