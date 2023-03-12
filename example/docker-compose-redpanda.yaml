@@ -58,4 +58,4 @@ services:
           'name':'internal','enabled':true,'require_client_auth':true,\
           'cert_file':'/etc/redpanda/certs/dst.crt',\
           'key_file':'/etc/redpanda/certs/dst.key',\
-          'tru
+          'truststore_file':'/etc/redpanda/certs/ca.
