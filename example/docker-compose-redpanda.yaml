@@ -59,4 +59,5 @@ services:
           'cert_file':'/etc/redpanda/certs/dst.crt',\
           'key_file':'/etc/redpanda/certs/dst.key',\
           'truststore_file':'/etc/redpanda/certs/ca.crt'}"
-      - "--set redpanda.admin_api
+      - "--set redpanda.admin_api_tls={\
+          'name':'internal','
