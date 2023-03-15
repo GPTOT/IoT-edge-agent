@@ -60,4 +60,5 @@ services:
           'key_file':'/etc/redpanda/certs/dst.key',\
           'truststore_file':'/etc/redpanda/certs/ca.crt'}"
       - "--set redpanda.admin_api_tls={\
-          'name':'internal','
+          'name':'internal','enabled':true,'require_client_auth':true,\
+  
