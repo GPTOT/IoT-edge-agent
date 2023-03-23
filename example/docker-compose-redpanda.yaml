@@ -67,4 +67,5 @@ services:
     networks:
       redpanda_network:
         ipv4_address: "172.24.1.20"
- 
+    volumes:
+      - ./certs:/etc/redpanda/ce
