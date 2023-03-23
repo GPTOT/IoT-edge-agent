@@ -65,4 +65,6 @@ services:
           'key_file':'/etc/redpanda/certs/dst.key',\
           'truststore_file':'/etc/redpanda/certs/ca.crt'}"
     networks:
-      redpanda_
+      redpanda_network:
+        ipv4_address: "172.24.1.20"
+ 
