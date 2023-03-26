@@ -70,4 +70,6 @@ services:
     volumes:
       - ./certs:/etc/redpanda/certs
     ports:
-      - "29092:2909
+      - "29092:29092"
+      - "29644:9644"
+      - "280
