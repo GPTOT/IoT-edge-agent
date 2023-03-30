@@ -81,3 +81,41 @@ IP.3 = 172.24.1.20
 EOF
 
 # Generate RSA private key for the nodes
+openssl genrsa -out $CERTS_DIR/src.key 2048
+chmod 400 $CERTS_DIR/src.key
+
+openssl genrsa -out $CERTS_DIR/dst.key 2048
+chmod 400 $CERTS_DIR/dst.key
+
+# Generate Certificate Signing Request (CSR) for the nodes
+openssl req -new -config node.cnf -key $CERTS_DIR/src.key -out $CERTS_DIR/src.csr -batch
+openssl req -new -config node.cnf -key $CERTS_DIR/dst.key -out $CERTS_DIR/dst.csr -batch
+
+# Use the CA to sign the CSR for the nodes
+openssl ca \
+-config ca.cnf \
+-keyfile $CERTS_DIR/ca.key \
+-cert $CERTS_DIR/ca.crt \
+-policy signing_policy \
+-extensions signing_node_req \
+-in $CERTS_DIR/src.csr \
+-out $CERTS_DIR/src.crt \
+-outdir $CERTS_DIR/ \
+-subj "/O=redpanda/CN=redpanda_source" \
+-batch
+
+openssl ca \
+-config ca.cnf \
+-keyfile $CERTS_DIR/ca.key \
+-cert $CERTS_DIR/ca.crt \
+-policy signing_policy \
+-extensions signing_node_req \
+-in $CERTS_DIR/dst.csr \
+-out $CERTS_DIR/dst.crt \
+-outdir $CERTS_DIR/ \
+-subj "/O=redpanda/CN=redpanda_destination" \
+-batch
+
+# Generate Java keystores for a Kafka destination
+openssl pkcs12 -export -inkey $CERTS_DIR/dst.key -in $CERTS_DIR/dst.crt -out $CERTS_DIR/dst.p12 -password pass:apache
+keytool -importkeystore \
