@@ -119,3 +119,37 @@ openssl ca \
 # Generate Java keystores for a Kafka destination
 openssl pkcs12 -export -inkey $CERTS_DIR/dst.key -in $CERTS_DIR/dst.crt -out $CERTS_DIR/dst.p12 -password pass:apache
 keytool -importkeystore \
+-srckeystore $CERTS_DIR/dst.p12 \
+-srcstoretype pkcs12 \
+-srcstorepass apache \
+-destkeystore $CERTS_DIR/kafka.keystore.jks \
+-deststorepass apache \
+-destkeypass apache
+
+keytool -keystore $CERTS_DIR/kafka.truststore.jks -alias CARoot -import -file $CERTS_DIR/ca.crt -noprompt -storepass apache
+
+# Generate RSA private key for the agent
+openssl genrsa -out $CERTS_DIR/agent.key 2048
+chmod 400 $CERTS_DIR/agent.key
+
+# Generate Certificate Signing Request (CSR) for the agent
+openssl req -new -config node.cnf -key $CERTS_DIR/agent.key -out $CERTS_DIR/agent.csr -batch
+
+# Use the CA to sign the CSR for the agent
+openssl ca \
+-config ca.cnf \
+-keyfile $CERTS_DIR/ca.key \
+-cert $CERTS_DIR/ca.crt \
+-policy signing_policy \
+-extensions signing_node_req \
+-in $CERTS_DIR/agent.csr \
+-out $CERTS_DIR/agent.crt \
+-outdir $CERTS_DIR/ \
+-subj "/O=redpanda/CN=redpanda_agent" \
+-batch
+
+# Set permissions required for Docker on Linux
+chmod -R 755 certs
+
+# Cleanup
+rm -f *.cnf index.txt* serial.txt* $CERTS_DIR/*.pem $CERTS_DIR/*.csr
