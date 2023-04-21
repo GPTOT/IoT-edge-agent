@@ -9,4 +9,5 @@ require (
 	github.com/twmb/tlscfg v1.2.0
 )
 
-re
+require (
+	github.com/fsnotify/fsnoti
