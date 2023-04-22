@@ -10,4 +10,5 @@ require (
 )
 
 require (
-	github.com/fsnotify/fsnoti
+	github.com/fsnotify/fsnotify v1.6.0 // indirect
+	github.com/mitch
