@@ -12,4 +12,4 @@ require (
 require (
 	github.com/fsnotify/fsnotify v1.6.0 // indirect
 	github.com/mitchellh/copystructure v1.2.0 // indirect
-	g
+	github.com/mitchellh/mapstructure v1
