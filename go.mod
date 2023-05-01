@@ -18,4 +18,5 @@ require (
 )
 
 require (
-	github.com/klauspost/co
+	github.com/klauspost/compress v1.15.12 // indirect
+	github.co
