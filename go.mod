@@ -20,4 +20,5 @@ require (
 require (
 	github.com/klauspost/compress v1.15.12 // indirect
 	github.com/knadh/koanf v1.4.4
-	github.com/pierrec/l
+	github.com/pierrec/lz4/v4 v4.1.17 // indirect
+	github.
