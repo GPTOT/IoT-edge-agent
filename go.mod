@@ -22,4 +22,5 @@ require (
 	github.com/knadh/koanf v1.4.4
 	github.com/pierrec/lz4/v4 v4.1.17 // indirect
 	github.com/twmb/franz-go/pkg/kmsg v1.2.0 // indirect
-	golang.org/x/crypto v0.3.0 // indire
+	golang.org/x/crypto v0.3.0 // indirect
+	golang.org/x/sys v0.2.0 // indi
