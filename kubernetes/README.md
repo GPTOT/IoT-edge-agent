@@ -6,3 +6,55 @@ The [deploy](deploy.yaml) file will deploy a single-replica statefulset with a c
 The instructions below assume you don't already have source and destination clusters available, and will walk you through the steps for both deploying these two clusters and deploying the redpanda edge agent. If you already have source and destination clusters, then you can skip [the steps](#deploy-source-and-destinaton-clusters) for deploying these clusters.
 
 ## Prerequisites
+
+An edge agent image must be built and pushed to an external registry in order to be available from within Kubernetes. The instructions below assume you are using Docker Hub.
+
+Clone this repository (if you haven't already):
+
+```bash
+git clone https://github.com/redpanda/redpanda-edge-agent
+cd redpanda-edge-agent
+```
+
+There are two build scripts in this repo: one for [the agent](../build.sh) and another for [the image](../docker/build.sh). We only need to run the image build script, since the agent will be built as a step within the image.
+
+Build the image, passing in the Docker username that will be used when both naming the image and pushing the image to Docker Hub. Replace `redpanda` below with your username:
+```bash
+./docker/build.sh -u redpanda
+```
+
+Credentials for the command above are pulled from the credential store that Docker is configured to use. For more details see the following links:
+- https://github.com/docker/docker-credential-helpers
+- https://steinbaugh.com/posts/docker-credential-pass.html
+- https://github.com/docker/docker-credential-helpers/issues/102
+
+The image is now available at `$USERNAME/redpanda-edge-agent` with a default tag of `latest`. To customize the tag or otherwise modify how the build script works, run `./docker/build.sh -h`.
+
+## Deploy source and destinaton clusters
+
+Use the helm chart to deploy two single-node clusters. Both will be deployed into the same namespace with external access disabled in the steps below. 
+
+The helm commands below assume you already have an available Kubernetes environment defined. If you don't the instructions [here](https://docs.redpanda.com/docs/platform/quickstart/kubernetes-qs-dev/#create-a-kubernetes-cluster).
+
+Deploy the source cluster:
+```bash
+helm upgrade --install redpanda-src redpanda/redpanda -n redpanda --create-namespace --set "statefulset.replicas=1" --set "external.enabled=false"
+```
+
+Now deploy the destination cluster:
+```bash
+helm upgrade --install redpanda-dest redpanda/redpanda -n redpanda --create-namespace --set "statefulset.replicas=1" --set "external.enabled=false"
+```
+
+There are several ways to check status of these deployments. One way is to view the status of the deployed resources with the following command:
+
+```bash
+watch -n 1 kubectl get all -A -o wide --field-selector=metadata.namespace=redpanda
+```
+
+## Deploy the agent
+
+Now you can deploy the agent. There are several defaults to note:
+- the agent is deployed within the `redpanda` namespace
+- the source cluster is available from `redpanda-src:10092`
+- the destination cluster is available from `redpanda-dest:10092`
