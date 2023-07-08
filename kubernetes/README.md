@@ -58,3 +58,49 @@ Now you can deploy the agent. There are several defaults to note:
 - the agent is deployed within the `redpanda` namespace
 - the source cluster is available from `redpanda-src:10092`
 - the destination cluster is available from `redpanda-dest:10092`
+
+These and other defaults can be changed by editing the ConfigMap resource within [deploy.yaml](deploy.yaml).
+
+Once you have edited the ConfigMap resource so that it is appropriate for your environment, you can deploy the agent:
+
+```bash
+kubectl apply -f kubernetes/deploy.yaml
+```
+
+You can monitor the progress of this deployment with the `watch...` command above, and also by monitoring events for the appropriate namespace (by default `redpanda`):
+
+```bash
+kubectl get events -w -n redpanda
+```
+
+
+## Test the agent
+
+Produce some messages to the source's `telemetry1` topic (note that the [ConfigMap](deploy.yaml) is configured to create the topics on startup):
+
+```bash
+kubectl exec -it -n redpanda redpanda-src-0 -c redpanda -- /bin/bash
+for i in {1..60}; do echo $(cat /dev/urandom | head -c10 | base64) | rpk topic produce telemetry1; sleep 1; done
+```
+
+The agent will forward the messages to a topic with the same name on the destination. Open a second terminal and consume the messages:
+
+```bash
+kubectl exec -it -n redpanda redpanda-dest-0 -c redpanda -- /bin/bash
+rpk topic consume telemetry1
+{
+  "topic": "telemetry1",
+  "key": "51940184cb08",
+  "value": "q/F5LP5DmnIPog==",
+  "timestamp": 1667984441252,
+  "partition": 0,
+  "offset": 0
+}
+{
+  "topic": "telemetry1",
+  "key": "51940184cb08",
+  "value": "5ATcnSvzmd3vOw==",
+  "timestamp": 1667984442624,
+  "partition": 0,
+  "offset": 1
+}
