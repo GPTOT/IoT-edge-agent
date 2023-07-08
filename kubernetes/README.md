@@ -104,3 +104,33 @@ rpk topic consume telemetry1
   "partition": 0,
   "offset": 1
 }
+{
+  "topic": "telemetry1",
+  "key": "51940184cb08",
+  "value": "9dtQdCH01KWaNQ==",
+  "timestamp": 1667984443669,
+  "partition": 0,
+  "offset": 2
+}
+...
+```
+
+## Tail the agent log
+
+```bash
+kubectl logs redpanda-edge-agent-0 -n redpanda -f
+
+time="2022-11-18T10:07:12Z" level=info msg="Init config from file: /etc/redpanda/agent.yaml"
+time="2022-11-18T10:07:12Z" level=debug msg="create_topics -> true\ndestination.bootstrap_servers -> 172.24.1.20:9092\ndestination.consumer_group_id -> 32f8d5c415cb\ndestination.name -> destination\ndestination.tls.ca_cert -> /etc/redpanda/certs/ca.crt\ndestination.tls.client_cert -> /etc/redpanda/certs/agent.crt\ndestination.tls.client_key -> /etc/redpanda/certs/agent.key\ndestination.tls.enabled -> true\ndestination.topics -> [config1 config2]\nid -> 32f8d5c415cb\nmax_backoff_secs -> 600\nmax_poll_records -> 1000\nsource.bootstrap_servers -> 172.24.1.10:9092\nsource.consumer_group_id -> 32f8d5c415cb\nsource.name -> source\nsource.tls.ca_cert -> /etc/redpanda/certs/ca.crt\nsource.tls.client_cert -> /etc/redpanda/certs/agent.crt\nsource.tls.client_key -> /etc/redpanda/certs/agent.key\nsource.tls.enabled -> true\nsource.topics -> [telemetry1 telemetry2]\n"
+time="2022-11-18T10:07:12Z" level=info msg="Created source client"
+time="2022-11-18T10:07:12Z" level=info msg="\t source broker: {\"NodeID\":1,\"Port\":9092,\"Host\":\"172.24.1.10\",\"Rack\":null}"
+time="2022-11-18T10:07:12Z" level=info msg="Created destination client"
+time="2022-11-18T10:07:12Z" level=info msg="\t destination broker: {\"NodeID\":1,\"Port\":9092,\"Host\":\"172.24.1.20\",\"Rack\":null}"
+time="2022-11-18T10:07:12Z" level=info msg="Created topic 'telemetry1' on source"
+time="2022-11-18T10:07:12Z" level=info msg="Created topic 'telemetry2' on source"
+time="2022-11-18T10:07:12Z" level=info msg="Created topic 'config1' on source"
+time="2022-11-18T10:07:12Z" level=info msg="Created topic 'config2' on source"
+time="2022-11-18T10:07:12Z" level=info msg="Created topic 'telemetry1' on destination"
+time="2022-11-18T10:07:12Z" level=info msg="Created topic 'telemetry2' on destination"
+time="2022-11-18T10:07:13Z" level=info msg="Created topic 'config1' on destination"
+time="2022-11-18T10:07:13Z" level=info msg="Created topic 'config2' on destination"
