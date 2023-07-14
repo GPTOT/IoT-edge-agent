@@ -1,2 +1,4 @@
 apiVersion: v1
-kind: ConfigMa
+kind: ConfigMap
+metadata:
+  name: edge-config
