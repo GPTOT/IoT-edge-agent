@@ -4,4 +4,6 @@ metadata:
   name: edge-configmap
   namespace: redpanda
   labels:
-   
+    app: redpanda-edge
+data:
+ 
