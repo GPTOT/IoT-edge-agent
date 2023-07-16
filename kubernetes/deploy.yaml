@@ -6,4 +6,5 @@ metadata:
   labels:
     app: redpanda-edge
 data:
- 
+  agent.yaml: |
+    create_topic
