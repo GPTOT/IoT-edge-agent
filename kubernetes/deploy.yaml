@@ -7,4 +7,7 @@ metadata:
     app: redpanda-edge
 data:
   agent.yaml: |
-    create_topic
+    create_topics: true
+    source:
+      name: "source"
+      boots
