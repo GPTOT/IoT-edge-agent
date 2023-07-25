@@ -10,4 +10,4 @@ data:
     create_topics: true
     source:
       name: "source"
-      boots
+      bootstrap_servers: redpanda-src:10092 # use secu
