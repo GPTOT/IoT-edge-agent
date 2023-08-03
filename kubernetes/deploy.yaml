@@ -13,4 +13,6 @@ data:
       bootstrap_servers: redpanda-src:10092 # use secured internal interface
       # List of outbound topics to push from source to destination
       topics:
-  
+        - telemetry1
+        - telemetry2
+   
