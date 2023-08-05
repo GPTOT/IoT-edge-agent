@@ -17,4 +17,4 @@ data:
         - telemetry2
       tls:
         enabled: false
-       
+        client_key: "/etc/redpanda/certs/agen
