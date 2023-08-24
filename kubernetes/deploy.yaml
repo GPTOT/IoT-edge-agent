@@ -23,4 +23,4 @@ data:
     destination:
       name: "destination"
       bootstrap_servers: redpanda-dest:10092 # use secured internal interface
-      max_version: "3.0.0"
+      max_version: "3.0.0" # maximum kafka protocol version
