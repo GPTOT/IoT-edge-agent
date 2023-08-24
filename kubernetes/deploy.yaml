@@ -22,4 +22,4 @@ data:
         ca_cert: "/etc/redpanda/certs/ca.crt"
     destination:
       name: "destination"
-      bootstrap_servers: redpanda-dest:1
+      bootstrap_servers: redpanda-dest:10092 # use secured internal interface
