@@ -29,4 +29,5 @@ data:
         - config1
         - config2
       tls:
- 
+        enabled: false
+        client_key: "/et
