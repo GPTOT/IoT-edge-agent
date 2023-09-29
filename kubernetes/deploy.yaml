@@ -30,4 +30,5 @@ data:
         - config2
       tls:
         enabled: false
-        client_key: "/et
+        client_key: "/etc/redpanda/certs/agent.key"
+   
