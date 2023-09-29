@@ -26,4 +26,7 @@ data:
       max_version: "3.0.0" # maximum kafka protocol version
       # List of inbound topics to pull from destination to source
       topics:
-     
+        - config1
+        - config2
+      tls:
+ 
