@@ -32,4 +32,6 @@ data:
         enabled: false
         client_key: "/etc/redpanda/certs/agent.key"
         client_cert: "/etc/redpanda/certs/agent.crt"
-        ca_cert: "/etc/redpanda/
+        ca_cert: "/etc/redpanda/certs/ca.crt"
+---
+apiVersion: ap
