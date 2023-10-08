@@ -47,4 +47,5 @@ spec:
       app: redpanda-edge
   template:
     metadata:
- 
+      labels:
+        app: redpanda-edg
