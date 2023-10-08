@@ -34,4 +34,7 @@ data:
         client_cert: "/etc/redpanda/certs/agent.crt"
         ca_cert: "/etc/redpanda/certs/ca.crt"
 ---
-apiVersion: ap
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  na
