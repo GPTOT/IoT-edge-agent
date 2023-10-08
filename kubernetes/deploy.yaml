@@ -38,4 +38,6 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: redpanda-edge-agent
-  namespace: redpan
+  namespace: redpanda
+spec:
+  serviceName: redpanda-e
