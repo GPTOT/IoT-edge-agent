@@ -37,4 +37,5 @@ data:
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  na
+  name: redpanda-edge-agent
+  namespace: redpan
