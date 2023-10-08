@@ -43,3 +43,5 @@ spec:
   serviceName: redpanda-edge-agent
   replicas: 1
   selector:
+    matchLabels:
+      app: redpanda-
