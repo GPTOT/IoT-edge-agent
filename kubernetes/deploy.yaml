@@ -40,4 +40,6 @@ metadata:
   name: redpanda-edge-agent
   namespace: redpanda
 spec:
-  serviceName: redpanda-e
+  serviceName: redpanda-edge-agent
+  replicas: 1
+  selector:
