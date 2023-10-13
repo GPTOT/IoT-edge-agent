@@ -51,4 +51,5 @@ spec:
         app: redpanda-edge
     spec:
       containers:
-      - name:
+      - name: redpanda-edge-agent
+        image: vuldin/r
