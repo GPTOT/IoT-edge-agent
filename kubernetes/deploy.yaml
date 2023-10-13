@@ -52,4 +52,6 @@ spec:
     spec:
       containers:
       - name: redpanda-edge-agent
-        image: vuldin/r
+        image: vuldin/redpanda-edge-agent
+        volumeMounts:
+        - nam
