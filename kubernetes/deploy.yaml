@@ -48,4 +48,7 @@ spec:
   template:
     metadata:
       labels:
-        app: redpanda-edg
+        app: redpanda-edge
+    spec:
+      containers:
+      - name:
