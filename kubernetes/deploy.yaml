@@ -54,4 +54,5 @@ spec:
       - name: redpanda-edge-agent
         image: vuldin/redpanda-edge-agent
         volumeMounts:
-        - nam
+        - name: agent-config
+          mountPath
