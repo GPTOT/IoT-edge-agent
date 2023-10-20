@@ -55,4 +55,5 @@ spec:
         image: vuldin/redpanda-edge-agent
         volumeMounts:
         - name: agent-config
-          mountPath
+          mountPath: /etc/redpanda/agent.yaml
+   
