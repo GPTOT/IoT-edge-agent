@@ -68,4 +68,5 @@ spec:
             cpu: 500m
       volumes:
       - name: agent-config
-   
+        configMap:
+         
