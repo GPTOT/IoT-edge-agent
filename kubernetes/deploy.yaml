@@ -56,4 +56,5 @@ spec:
         volumeMounts:
         - name: agent-config
           mountPath: /etc/redpanda/agent.yaml
-   
+          subPath: agent.yaml
+    
