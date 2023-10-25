@@ -59,4 +59,5 @@ spec:
           subPath: agent.yaml
         resources:
           requests:
-  
+            memory: 64Mi
+          
