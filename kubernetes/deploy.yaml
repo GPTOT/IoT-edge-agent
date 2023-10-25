@@ -66,4 +66,6 @@ spec:
             #cpu: 1
             memory: 128Mi
             cpu: 500m
-      vo
+      volumes:
+      - name: agent-config
+   
