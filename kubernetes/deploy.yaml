@@ -69,4 +69,5 @@ spec:
       volumes:
       - name: agent-config
         configMap:
-         
+          name: edge-configmap
+
