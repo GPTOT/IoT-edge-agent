@@ -64,4 +64,6 @@ spec:
           limits:
             #memory: 256Mi
             #cpu: 1
-            memor
+            memory: 128Mi
+            cpu: 500m
+      vo
