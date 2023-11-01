@@ -55,3 +55,40 @@ Example `agent.yaml` can be found below:
 # key is empty, then it is set to the agent id to ensure that all records sent
 # by the same agent are routed to the same destination topic partition.
 id:
+# If the provided topics do not exist, attempt to create them on the source and
+# destination clusters.
+create_topics: true
+# Source cluster configuration. The agent will typically run as a sidecar to
+# the source cluster in an edge environment.
+source:
+    # Name of the source cluster
+    name: "source"
+    # List of Redpanda nodes (typically a single node at the edge).
+    bootstrap_servers: 127.0.0.1:19092
+    # List of topics to forward to the destination cluster.
+    #   - Specify a single topic name to forward events to a topic with the same
+    #     name on the destination cluster (e.g. "telemetryA").
+    #   - Specify a pair of topic names, separated by a colon, to forward events
+    #     to a topic with a different name on the destination cluster
+    #     (e.g. "telemetryB:telemetryC").
+    topics:
+        - telemetryA
+        - telemetryB:telemetryC
+    # Set the consumer group for the agent to join and consume in. Defaults to
+    # the agent id if not set.
+    consumer_group_id: ""
+    # The source cluster TLS configuration.
+    tls:
+        enabled: true
+        client_key: "agent.key"
+        client_cert: "agent.crt"
+        ca_cert: "ca.crt"
+    # The source cluster SASL configuration.
+    sasl:
+        # Valid SASL methods: PLAIN | SCRAM-SHA-256 | SCRAM-SHA-512
+        sasl_method: ""
+        sasl_username: ""
+        sasl_password: ""
+# Destination cluster configuration. This is typically a centralized Redpanda
+# cluster that aggregates the data produced by all agents.
+destination:
